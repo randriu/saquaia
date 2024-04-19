@@ -1,0 +1,88 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SeQuaiA | Model properties</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <<div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Documentation</h2>
+    <p>Specifying chemical reaction networks - Model properties  |  <a href="/documentation.html">Back to contents</a></p>
+    <hr>
+    <p>In order to specify chemical reaction networks, you need to understand the <i>Model properties</i> panel. In the following, we describe and explain all the details related to the <i>Model properties</i>.</p>
+
+<p><img src="/assets/img/screenshot-model-properties.png" class="w-30 img-responsive" alt="Responsive image" /></p>
+
+<p>The figure shows the model properties for the simple gene expression model. Refer to the quickstart guide for a shorter description.</p>
+
+<h5 id="file-path">File path</h5>
+<p>Indicates where the model will be saved. If it is empty, no file path is currently specified.</p>
+
+<h5 id="name">Name</h5>
+<p>The name of the model. The name may be left empty.</p>
+
+<h5 id="number-of-species">Number of Species</h5>
+<p>Specifies the number of species in the chemical reaction network. Make sure to decide on the number of species before adding reactions, editing the discretization, editing the bounds and editing the initial state.</p>
+
+<h5 id="state-vector">State vector</h5>
+<p>Indicates which component corresponds to which species. In particular, this is important for specifying the reactions and editing the initial state and bounds.</p>
+
+<h5 id="reactions">Reactions</h5>
+<p>Displays a list of reactions. The list items are formatted like this: <code>[Reaction label],[Rate]: [r_1] ... [r_d] -&gt; [p_1] ... [p_d]</code>.<br />
+<code>d</code> is the number of species in the chemical reaction network, <code>[r_1] ... [r_d]</code> are non-positive stoichiometric coefficients of the reactants and <code>[p_1] ... [p_d]</code> are non-negative stoichiometric coefficients of the products.</p>
+
+<p><b>Adding reaction: </b>Click <i>Add</i> beneath the list of reactions. A dialog opens, where you can specifiy the <i>Reaction label</i>, stoichiometric coefficients of the reactants, stoichiometric coefficients of the products and rate of the reaction. The first spinner in each line corresponds to the coefficient for the first species, the second for the second species and so fourth. Note that the stoichiometric coefficients of the reactants have to be non-positive and the coefficients of the products have to be non-negative.</p>
+
+<p><b>Editing reactions: </b> Select a reaction from the reaction list and click <i>Edit</i> below the list. A dialog, similar to the dialog for adding reactions, opens.</p>
+
+<p><b>Removing reactions: </b> Select a reaction from the reaction list and select <i>Remove</i> beneath the list.</p>
+
+<p><b>Edit species names: </b> Click <i>Edit names</i> beneath the reaction list. A dialog opens, where you can change the name of the species. Note that you have to click <i>Apply</i> to save the changes. Once applied, the state vector will update and you can see the new name(s).</p>
+
+<h5 id="init-state">Init state</h5>
+<p>Indicates the current initial state, i.e. the initial population for all the species. The components of the initial state correspond to the components of the state vector (see above).</p>
+
+<p><b>Edit init state: </b> Click <i>Edit</i>. A dialog opens where you can edit the initial population of each species. Make sure you actually enter the population and not the population level.</p>
+
+<h5 id="bounds-and-discretization">Bounds and Discretization</h5>
+<p>Displays the different population levels and the corresponding intervals.</p>
+
+<p><b>Editing the bounds: </b> Click on <i>Edit bounds</i>. A dialog opens, where you can edit the maximal population each species can attain. By default, the population bound for each species is 2^31 - 1.</p>
+
+<p><b>Editing the discretization: </b> Click on <i>Edit discretization</i>. A dialog opens, where you can select the species for which you want to edit the discretization. Enter an integer value and click <i>Add</i> to add it to the discretization. The thresholds are automatically sorted. Select a threshold and click <i>Remove</i> to remove the threshold. Suppose the lists consists of thresholds <code>t_1,...,t_l</code>. This corresponds to the population levels <code>[0,0],(0,t_1],(t_1,t_2],...,(t_l,bound]</code>.</p>
+
+<p><b>Partition: </b> Select a population level of a species in the discretization table and click <i>Partition</i>. A dialog opens, where you can specify the number of intervals <code>n</code> the population level should be partitioned into. The population will be partitioned into <code>n</code> equally large intervals.</p>
+
+<h5 id="envelope">Envelope</h5>
+<p>Essentially, the envelope controls how many transitions to consider. If the envelope is set to 0, SeQuaiA will only consider the most probable behavior, i.e. the fastest transitions in each state. Thus, increasing the envelope will incorporate less probable behavior, i.e. slower transitions. The envelope is useful for studying less probable behaviors of the system and for countering non-determinism. By default, the value is set to 4.</p>
+
+
+    
+    
+
+  
+
+  
+
+  <div id="post-nav">
+      
+      <a rel="prev" class="mr-2 prev pag btn btn-outline-secondary" href="/documentation/2.html" role="button">Previous page: Running SeQuaiA</a>
+      
+      
+      <a rel="next" class="next pag btn btn-outline-secondary" href="/documentation/4.html" role="button">Next page: Visualization options</a>
+      
+  </div>
+
+</body>
+</html>

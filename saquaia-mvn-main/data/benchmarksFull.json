@@ -1,0 +1,2624 @@
+[
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -5025562857975149833
+  },
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -5843495416241995736
+  },
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": 5694868678511409995
+  },
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": 5111195811822994797
+  },
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -6169532649852302182
+  },
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -1782466964123969572
+  },
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": 6802844026563419272
+  },
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": 5086654115216342560
+  },
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": 8552898714322622292
+  },
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -4004755535478349341
+  },
+  {
+    "type": "VISUAL",
+    "name": "TS_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -1488139573943419793
+  },
+  {
+    "type": "VISUAL",
+    "name": "TS_Visual_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 8051837266862454915
+  },
+  {
+    "type": "VISUAL",
+    "name": "TS_Visual_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -4613416830416070574
+  },
+  {
+    "type": "VISUAL",
+    "name": "TS_Visual_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 7130900098642117381
+  },
+  {
+    "type": "VISUAL",
+    "name": "TS_Visual_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 3272055439932147596
+  },
+  {
+    "type": "VISUAL",
+    "name": "RP_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -7482923245497525943
+  },
+  {
+    "type": "VISUAL",
+    "name": "RP_Visual_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 3869528714570848026
+  },
+  {
+    "type": "VISUAL",
+    "name": "RP_Visual_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -3210362905434573697
+  },
+  {
+    "type": "VISUAL",
+    "name": "RP_Visual_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 3176860285874836986
+  },
+  {
+    "type": "VISUAL",
+    "name": "RP_Visual_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -7610621359446545191
+  },
+  {
+    "type": "VISUAL",
+    "name": "EC_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 7200000,
+    "seed": -4588066762141701118
+  },
+  {
+    "type": "VISUAL",
+    "name": "EC_Visual_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 7200000,
+    "seed": -7912908803613548926
+  },
+  {
+    "type": "VISUAL",
+    "name": "EC_Visual_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 7200000,
+    "seed": -7747173299880867347
+  },
+  {
+    "type": "VISUAL",
+    "name": "EC_Visual_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 7200000,
+    "seed": -4565385657661118002
+  },
+  {
+    "type": "VISUAL",
+    "name": "EC_Visual_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 7200000,
+    "seed": 579564241196435126
+  },
+  {
+    "type": "VISUAL",
+    "name": "TR_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 6602457318652576433
+  },
+  {
+    "type": "VISUAL",
+    "name": "TR_Visual_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -3361053196040192472
+  },
+  {
+    "type": "VISUAL",
+    "name": "TR_Visual_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 7704975138223047541
+  },
+  {
+    "type": "VISUAL",
+    "name": "TR_Visual_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -478957009993612106
+  },
+  {
+    "type": "VISUAL",
+    "name": "TR_Visual_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -5286721520629762393
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 8865034956231574663
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_SSA2",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 5380112710085299282
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": -924917377818437675
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": -3311341186503823761
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": -6702724865295600521
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 6809089882916169883
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "VI_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 6645529480803663035
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "VI_SSA2",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 8018081796930885386
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "VI_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 8436011436776032633
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "VI_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 8719562077786624187
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "VI_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 8651938460229599588
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "VI_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": -3185338829648084755
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TS_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 2786040548068544931
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TS_SSA2",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": -3064627001040919599
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TS_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 8491153766255516575
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TS_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 5175639579568511616
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TS_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 3614901514407423006
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TS_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 3307011078434949678
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "RP_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": -2477641376863858799
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "RP_SSA2",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 8976013293400652448
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "RP_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 7765557456844232617
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "RP_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": -6772356965118744613
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "RP_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": -5536630875295603153
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "RP_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 5816783378753256221
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 172800000,
+    "seed": -7902210446970826476
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_SSA2",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 172800000,
+    "seed": 6843968935032545040
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 172800000,
+    "seed": -2364603267878439993
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 172800000,
+    "seed": -3583631517115538627
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 172800000,
+    "seed": -7079607983502818874
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 172800000,
+    "seed": 6905711326835401406
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": -5584775193021092232
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_SSA2",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": -1685763405318446537
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_TAU",
+    "simconf": {
+      "type": "TAU",
+      "epsilon": 0.03
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 3618275030082862648
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_HYB",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2,
+      "factor_TAU_to_ODE": 2,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": -3521025573995865849
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": -6863419716327549772
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 172800000,
+    "seed": 8548207711936469433
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_300.0MB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 300000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": 5636940461969593464
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_300.0MB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 300000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": -8487172994898555456
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_600.0MB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 600000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": -6731013670330063931
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_600.0MB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 600000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": 2329045896118581347
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_1.0GB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": 9174061941632264871
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_1.0GB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": 503857395356251382
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_2.0GB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 2000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": 673020552662408774
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_2.0GB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 2000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": 8925343867316266058
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_3.5GB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 3500000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": -6363141803348005509
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_3.5GB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 3500000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": 7300599417655508326
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_5.0GB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": -1103623001814883674
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "EC_MEM_SSA_5.0GB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 28800000,
+    "seed": 7094817657563592054
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_300.0MB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 300000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": -6525868206941090114
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_300.0MB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 300000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": -4234161778822925565
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_600.0MB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 600000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": -1954565432038993495
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_600.0MB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 600000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": -7400150545808261020
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_1.0GB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": -442085989067090995
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_1.0GB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": 1421969441671016819
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_2.0GB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 2000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": -4148290888502147866
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_2.0GB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 2000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": 5143363558960181380
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_3.5GB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 3500000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": -1859333492470500327
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_3.5GB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 3500000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": 6896059675492935315
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_5.0GB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": 7956256943701054793
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "TR_MEM_HYB_5.0GB_nonadaptive",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": false,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 2000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_x_repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 28800000,
+    "seed": 6130300700125639356
+  }
+]

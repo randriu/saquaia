@@ -1,0 +1,97 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SAQuaiA | CRN & Setting</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/saquaia/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>CRN & Setting</h2>
+    <hr>
+    <div class="row">
+      <div class="col-3">
+        <ul id="side-nav" class="list-group">
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/1.html">Getting started</a>
+  </li>
+  
+  <li class="list-group-item active-li">
+    <a id="active-link" href="/saquaia/quickstart/2.html">CRN & Setting</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/3.html">Analyzing the model</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/4.html">Analysis results</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/5.html">Next steps</a>
+  </li>
+  
+</ul>
+
+      </div>
+      <div class="col" id="content">
+        <h1 id="model-properties">CRN & Setting</h1>
+<hr />
+<p>To introduce this part of the application UI, we have selected the <b>Predator_Prey</b> model, which is preloaded when the application launches.</p>
+
+<h2 id="open-the-model">Open the model</h2>
+<p>The models are located in the folder <code>data/settings/examples</code>. The selection of a specific model is accomplished through the <i>Settings</i> tab in the Menu bar, by choosing the <i>Open</i> option which initiates the file explorer for selection.</p>
+
+<h2 id="understanding-the-model-properties">CRN</h2>
+<p>In this pane, users can change the model's name when clicking on the <i>Edit</i> button. Furthermore, they can modify species and reactions either by double-clicking on a specific item or by using a right-click if they also wish to add or delete objects.</p>
+
+<p><img src="/assets/img/crn.png" class="w-50 img-responsive" alt="Responsive image" /></p>
+
+<h2 id="understanding-the-model-properties">Setting</h2>
+
+<p>Same as CRN, user can set a name for the particular Setting, which is defined by the following items:</p>
+
+<p><b>Abstraction:</b> Defines for each species in the model a set of intervals with their representatives in the format [<i>interval beginning, representative, interval end</i>]. Users can modify the interval bounds or customize the intervals by double-clicking the interval area of the particular species.</p>
+
+<p><b>Growth factor:</b> The number represents how many times the next interval is larger than the previous one. The exception lies with custom intervals, which are preserved when the growth factor changes.</p>
+
+<p><b>Initial state:</b> Clicking <i>Edit</i> allows user to set the starting number for each species.</p>
+
+<p><b>End time:</b> Clicking <i>Edit</i> allows user to set the simulation end time.</p>
+
+<p><img src="/assets/img/setting.png" class="w-50 img-responsive" alt="Responsive image" /></p>
+
+        <br>
+        
+    
+
+  
+
+  
+
+  <div id="post-nav">
+      
+      <a rel="prev" class="mr-2 prev pag btn btn-outline-secondary" href="/saquaia/quickstart/1.html" role="button">Previous page: Getting started</a>
+      
+      
+      <a rel="next" class="next pag btn btn-outline-secondary" href="/saquaia/quickstart/3.html" role="button">Next page: Analyzing the model</a>
+      
+  </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

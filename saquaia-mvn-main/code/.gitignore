@@ -1,0 +1,12 @@
+.idea
+*.class
+*.jar
+.classpath
+.project
+.settings
+/bin
+/out
+/target
+/nbproject/
+/code/nbproject/
+/code/target/

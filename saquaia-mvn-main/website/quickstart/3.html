@@ -1,0 +1,88 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SeQuaiA | Analyzing the model</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Analyzing the model</h2>
+    <hr>
+    <div class="row">
+      <div class="col-3">
+        <ul id="side-nav" class="list-group">
+  
+  <li class="list-group-item ">
+    <a  href="/quickstart/1.html">Getting started</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/quickstart/2.html">Model properties</a>
+  </li>
+  
+  <li class="list-group-item active-li">
+    <a id="active-link" href="/quickstart/3.html">Analyzing the model</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/quickstart/4.html">Visualizing the model</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/quickstart/5.html">Mean simulations</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/quickstart/6.html">Next steps</a>
+  </li>
+  
+</ul>
+
+      </div>
+      <div class="col" id="content">
+        <h1 id="analyzing-the-model">Analyzing the model</h1>
+<hr />
+<p>Once we are done modeling the system, we can analyze it. Go the menu bar and select <i>Perform analysis</i> in the <i>Analysis</i> menu. If the analysis was successful, the message <i>Analysis performed successfully</i> will be displayed in the <i>Message panel</i>.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If the analysis is not performed successfully, this can have several reasons:</p>
+
+<p>The stoichiometric coefficients are not 1,-1 or 0.</p>
+
+<p>The discretization and the bounds are conflicting.</p>
+
+<p>The initial state does not reflect the actual population number of the species, but the population levels.</p>
+
+        <br>
+        
+    
+
+  
+
+  
+
+  <div id="post-nav">
+      
+      <a rel="prev" class="mr-2 prev pag btn btn-outline-secondary" href="/quickstart/2.html" role="button">Previous page: Model properties</a>
+      
+      
+      <a rel="next" class="next pag btn btn-outline-secondary" href="/quickstart/4.html" role="button">Next page: Visualizing the model</a>
+      
+  </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

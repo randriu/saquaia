@@ -1,0 +1,134 @@
+{
+  "name": "SimpleGene",
+  "initial_state": [
+    1,
+    0,
+    0
+  ],
+  "bounds": [
+    1,
+    1,
+    300
+  ],
+  "population_level_growth_factor": 2.0,
+  "crn": {
+    "name": "SimpleGene",
+    "speciesNames": [
+      "D_on",
+      "D_off",
+      "P"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          1,
+          0,
+          0
+        ],
+        "products": [
+          1,
+          0,
+          1
+        ],
+        "rate_constant": 10.0,
+        "label": "p"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          1
+        ],
+        "products": [
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 0.1,
+        "label": "d"
+      },
+      {
+        "reactants": [
+          1,
+          0,
+          1
+        ],
+        "products": [
+          0,
+          1,
+          0
+        ],
+        "rate_constant": 0.001,
+        "label": "s"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 1
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      },
+      {
+        "min": 63,
+        "rep": 94,
+        "max": 126
+      },
+      {
+        "min": 127,
+        "rep": 170,
+        "max": 213
+      },
+      {
+        "min": 214,
+        "rep": 257,
+        "max": 300
+      }
+    ]
+  ]
+}

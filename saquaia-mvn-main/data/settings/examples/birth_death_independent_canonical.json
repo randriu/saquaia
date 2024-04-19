@@ -1,0 +1,387 @@
+{
+  "name": "BirthDeathIndependent (canonical)",
+  "initial_state": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "bounds": [
+    64,
+    64,
+    62,
+    64,
+    60
+  ],
+  "population_level_growth_factor": 2.0,
+  "crn": {
+    "name": "BirthDeathIndependent",
+    "speciesNames": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 10.0,
+        "label": "b1"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 10.0,
+        "label": "b2"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "rate_constant": 10.0,
+        "label": "r3"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "rate_constant": 10.0,
+        "label": "b4"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "rate_constant": 10.0,
+        "label": "b5"
+      },
+      {
+        "reactants": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d1"
+      },
+      {
+        "reactants": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d2"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d3"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d4"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d5"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 47
+      },
+      {
+        "min": 48,
+        "rep": 56,
+        "max": 64
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 47
+      },
+      {
+        "min": 48,
+        "rep": 56,
+        "max": 64
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 47
+      },
+      {
+        "min": 48,
+        "rep": 56,
+        "max": 64
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 60
+      }
+    ]
+  ]
+}

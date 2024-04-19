@@ -1,0 +1,95 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SAQuaiA | Analysis results</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/saquaia/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Analysis results</h2>
+    <hr>
+    <div class="row">
+      <div class="col-3">
+        <ul id="side-nav" class="list-group">
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/1.html">Getting started</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/2.html">CRN & Setting</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/3.html">Analyzing the model</a>
+  </li>
+  
+  <li class="list-group-item active-li">
+    <a id="active-link" href="/saquaia/quickstart/4.html">Analysis results</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/5.html">Next steps</a>
+  </li>
+  
+</ul>
+
+      </div>
+      <div class="col" id="content">
+        <h1 id="visualizing-the-model">Analysis results</h1>
+<hr />
+
+<h2 id="visualization-panel">Result overview</h2>
+<p>The <i>Results</i> pane provides an overview of the simulation and transient analysis results. Double-clicking on a specific result displays its graph in a separate dialog window. Right-clicking presents options such as editing the result name, deletion, loading the settings used to calculate the result, and comparison, which will be discussed later.</p>
+<p><img src="/assets/img/results.png" class="w-50 img-responsive" alt="Responsive image" /></p>
+
+<h2 id="display-result">Simulation result window</h2>
+<p>Double-clicking on a specific result opens the Result dialog window, which visualizes the evolution of the species count over time.</p>
+<p><img src="/assets/img/sim-result.png" class="w-75 img-responsive" alt="Responsive image" /></p>
+<p>The dialog's graph allows users to display either species numbers or abstract states (levels). Additionally, users can zoom in on a specific area of the graph through click-and-drag selection towards the bottom-right; selecting in the opposite direction will zoom out to the default view.</p>
+<p><img src="/assets/img/zoom-in.png" class="w-75 img-responsive" alt="Responsive image" /></p>
+<p>The same dialog is used when comparing results from different simulations. Selection is achieved by clicking with the mouse while holding down the Control key. Comparisons can be made using the 'Compare' option in the Menu bar or via the options available when right-clicking in the simulations area. Multiple simulations can have different settings. For comparison purposes, users can select a specific setting from the combobox located beneath the graph.</p>
+<p><img src="/assets/img/compare.png" class="w-75 img-responsive" alt="Responsive image" /></p>
+
+<h2 id="trensient-analysis-result">Transient analysis result window</h2>
+<p>This dialog is similar to the simulation result dialog, except it displays the result of transient analysis. Note that each species is represented by a unique color, and the species whose color extends to the top of the level possesses a larger mass.</p>
+<p>To quantify the difference, users can view the Earth Mover's Distance of the distributions by selecting the checkbox located beneath the graph area.</p>
+<p><img src="/assets/img/compare-transient.png" class="w-75 img-responsive" alt="Responsive image" /></p>
+
+<h2 id="speed-comparison">Speed comparison of transient analyses</h2>
+<p>The effectiveness of segmental simulations can be observed with the increasing number of simulations, as the memorized segments are reused more frequently. Users can observe the speedup factor by selecting the transient analyses and comparing them, either by using the 'Compare' option in the Menu bar or via the options that appear when right-clicking the transient analysis result area.</p>
+<p><img src="/assets/img/compare-speed.png" class="w-75 img-responsive" alt="Responsive image" /></p>
+
+        <br>
+        
+    
+
+  
+
+  
+
+  <div id="post-nav">
+      
+      <a rel="prev" class="mr-2 prev pag btn btn-outline-secondary" href="/saquaia/quickstart/3.html" role="button">Previous page: Analyzing the model</a>
+      
+      
+      <a rel="next" class="next pag btn btn-outline-secondary" href="/saquaia/quickstart/5.html" role="button">Next page: Next steps</a>
+      
+  </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+{
+  "name": "Brusselator",
+  "initial_state": [
+    100,
+    100
+  ],
+  "bounds": [
+    300,
+    300
+  ],
+  "population_level_growth_factor": 2.0,
+  "extraLevels": [
+    [
+      130,
+      70,
+      230,
+      170,
+      110,
+      270,
+      50,
+      210,
+      150,
+      90,
+      250,
+      30,
+      190
+    ],
+    [
+      130,
+      70,
+      230,
+      170,
+      110,
+      270,
+      50,
+      210,
+      150,
+      90,
+      250,
+      30,
+      190
+    ]
+  ],
+  "crn": {
+    "name": "Brusselator",
+    "speciesNames": [
+      "X",
+      "Y"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          0,
+          0
+        ],
+        "products": [
+          1,
+          0
+        ],
+        "rate_constant": 100.0,
+        "label": "spawn"
+      },
+      {
+        "reactants": [
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "despawn"
+      },
+      {
+        "reactants": [
+          1,
+          0
+        ],
+        "products": [
+          0,
+          1
+        ],
+        "rate_constant": 1.0,
+        "label": "morph"
+      },
+      {
+        "reactants": [
+          2,
+          1
+        ],
+        "products": [
+          3,
+          0
+        ],
+        "rate_constant": 2.0E-4,
+        "label": "back"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      },
+      {
+        "min": 2,
+        "rep": 2,
+        "max": 3
+      },
+      {
+        "min": 4,
+        "rep": 5,
+        "max": 7
+      },
+      {
+        "min": 8,
+        "rep": 11,
+        "max": 15
+      },
+      {
+        "min": 16,
+        "rep": 23,
+        "max": 29
+      },
+      {
+        "min": 30,
+        "rep": 39,
+        "max": 49
+      },
+      {
+        "min": 50,
+        "rep": 59,
+        "max": 69
+      },
+      {
+        "min": 70,
+        "rep": 79,
+        "max": 89
+      },
+      {
+        "min": 90,
+        "rep": 99,
+        "max": 109
+      },
+      {
+        "min": 110,
+        "rep": 119,
+        "max": 129
+      },
+      {
+        "min": 130,
+        "rep": 139,
+        "max": 149
+      },
+      {
+        "min": 150,
+        "rep": 159,
+        "max": 169
+      },
+      {
+        "min": 170,
+        "rep": 179,
+        "max": 189
+      },
+      {
+        "min": 190,
+        "rep": 199,
+        "max": 209
+      },
+      {
+        "min": 210,
+        "rep": 219,
+        "max": 229
+      },
+      {
+        "min": 230,
+        "rep": 239,
+        "max": 249
+      },
+      {
+        "min": 250,
+        "rep": 259,
+        "max": 269
+      },
+      {
+        "min": 270,
+        "rep": 285,
+        "max": 300
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 29
+      },
+      {
+        "min": 30,
+        "rep": 39,
+        "max": 49
+      },
+      {
+        "min": 50,
+        "rep": 59,
+        "max": 69
+      },
+      {
+        "min": 70,
+        "rep": 79,
+        "max": 89
+      },
+      {
+        "min": 90,
+        "rep": 99,
+        "max": 109
+      },
+      {
+        "min": 110,
+        "rep": 119,
+        "max": 129
+      },
+      {
+        "min": 130,
+        "rep": 139,
+        "max": 149
+      },
+      {
+        "min": 150,
+        "rep": 159,
+        "max": 169
+      },
+      {
+        "min": 170,
+        "rep": 179,
+        "max": 189
+      },
+      {
+        "min": 190,
+        "rep": 199,
+        "max": 209
+      },
+      {
+        "min": 210,
+        "rep": 219,
+        "max": 229
+      },
+      {
+        "min": 230,
+        "rep": 239,
+        "max": 249
+      },
+      {
+        "min": 250,
+        "rep": 259,
+        "max": 269
+      },
+      {
+        "min": 270,
+        "rep": 285,
+        "max": 300
+      }
+    ]
+  ]
+}

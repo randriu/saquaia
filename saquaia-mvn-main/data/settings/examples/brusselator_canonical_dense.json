@@ -1,0 +1,200 @@
+{
+  "name": "Brusselator (canonical, dense)",
+  "initial_state": [
+    100,
+    100
+  ],
+  "bounds": [
+    300,
+    300
+  ],
+  "population_level_growth_factor": 1.5,
+  "crn": {
+    "name": "Brusselator",
+    "speciesNames": [
+      "X",
+      "Y"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          0,
+          0
+        ],
+        "products": [
+          1,
+          0
+        ],
+        "rate_constant": 100.0,
+        "label": "spawn"
+      },
+      {
+        "reactants": [
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "despawn"
+      },
+      {
+        "reactants": [
+          1,
+          0
+        ],
+        "products": [
+          0,
+          1
+        ],
+        "rate_constant": 1.0,
+        "label": "morph"
+      },
+      {
+        "reactants": [
+          2,
+          1
+        ],
+        "products": [
+          3,
+          0
+        ],
+        "rate_constant": 2.0E-4,
+        "label": "back"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      },
+      {
+        "min": 2,
+        "rep": 2,
+        "max": 3
+      },
+      {
+        "min": 4,
+        "rep": 5,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 9,
+        "max": 11
+      },
+      {
+        "min": 12,
+        "rep": 15,
+        "max": 19
+      },
+      {
+        "min": 20,
+        "rep": 25,
+        "max": 31
+      },
+      {
+        "min": 32,
+        "rep": 40,
+        "max": 49
+      },
+      {
+        "min": 50,
+        "rep": 63,
+        "max": 76
+      },
+      {
+        "min": 77,
+        "rep": 97,
+        "max": 117
+      },
+      {
+        "min": 118,
+        "rep": 148,
+        "max": 179
+      },
+      {
+        "min": 180,
+        "rep": 209,
+        "max": 239
+      },
+      {
+        "min": 240,
+        "rep": 270,
+        "max": 300
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 5
+      },
+      {
+        "min": 6,
+        "rep": 8,
+        "max": 10
+      },
+      {
+        "min": 11,
+        "rep": 14,
+        "max": 18
+      },
+      {
+        "min": 19,
+        "rep": 24,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 48
+      },
+      {
+        "min": 49,
+        "rep": 62,
+        "max": 75
+      },
+      {
+        "min": 76,
+        "rep": 96,
+        "max": 116
+      },
+      {
+        "min": 117,
+        "rep": 147,
+        "max": 178
+      },
+      {
+        "min": 179,
+        "rep": 209,
+        "max": 239
+      },
+      {
+        "min": 240,
+        "rep": 270,
+        "max": 300
+      }
+    ]
+  ]
+}

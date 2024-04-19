@@ -1,0 +1,170 @@
+{
+  "name": "Brusselator",
+  "initial_state": [
+    100,
+    100
+  ],
+  "bounds": [
+    300,
+    300
+  ],
+  "population_level_growth_factor": 2.0,
+  "crn": {
+    "name": "Brusselator",
+    "speciesNames": [
+      "X",
+      "Y"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          0,
+          0
+        ],
+        "products": [
+          1,
+          0
+        ],
+        "rate_constant": 100.0,
+        "label": "spawn"
+      },
+      {
+        "reactants": [
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "despawn"
+      },
+      {
+        "reactants": [
+          1,
+          0
+        ],
+        "products": [
+          0,
+          1
+        ],
+        "rate_constant": 1.0,
+        "label": "morph"
+      },
+      {
+        "reactants": [
+          2,
+          1
+        ],
+        "products": [
+          3,
+          0
+        ],
+        "rate_constant": 2.0E-4,
+        "label": "back"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      },
+      {
+        "min": 2,
+        "rep": 2,
+        "max": 3
+      },
+      {
+        "min": 4,
+        "rep": 5,
+        "max": 7
+      },
+      {
+        "min": 8,
+        "rep": 11,
+        "max": 15
+      },
+      {
+        "min": 16,
+        "rep": 23,
+        "max": 31
+      },
+      {
+        "min": 32,
+        "rep": 47,
+        "max": 63
+      },
+      {
+        "min": 64,
+        "rep": 95,
+        "max": 127
+      },
+      {
+        "min": 128,
+        "rep": 170,
+        "max": 213
+      },
+      {
+        "min": 214,
+        "rep": 257,
+        "max": 300
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      },
+      {
+        "min": 63,
+        "rep": 94,
+        "max": 126
+      },
+      {
+        "min": 127,
+        "rep": 170,
+        "max": 213
+      },
+      {
+        "min": 214,
+        "rep": 257,
+        "max": 300
+      }
+    ]
+  ]
+}

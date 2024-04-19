@@ -1,0 +1,61 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SAQuaiA | Getting started</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/saquaia/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Predator prey</h2>
+    <hr>
+
+<h3>Model definition</h3>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Predator Prey</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Species (2)</td>
+            <td>Pred, Prey</td>
+        </tr>
+        <tr>
+            <td>Initial state</td>
+            <td>200 × Pred, 200 × Prey</td>
+        </tr>
+        <tr>
+            <td>End time</td>
+            <td>200s</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Reactions (3)</td>
+            <td>rep: Prey &#8594 <sup>(1 × Prey)</sup> &#8594; 2 × Prey</td>
+        </tr>
+        <tr>
+            <td>eat: Pred + Prey &#8594 <sup>(0.005 × Pred × Prey)</sup> &#8594; 2 × Pred</td>
+        </tr>
+        <tr>
+            <td>starve: Pred &#8594 <sup>(1 × Pred)</sup> &#8594; 0</td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+		<h5 id="sources">Sources</h5>
+		<p><b>[4]</b> Gillespie, D.T.: Exact stochastic simulation of coupled chemical reactions. The Journal of Physical Chemistry 81(25), 2340–2361 (1977)</p>
+  </div>
+</body>
+</html>

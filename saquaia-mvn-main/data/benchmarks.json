@@ -1,0 +1,17 @@
+[
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10,
+    "repeat": 1,
+    "plot_first": 10,
+    "example": "pred_prey_my.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -5025562857975149833
+  }
+]

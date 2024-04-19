@@ -1,0 +1,422 @@
+// SeQuaiA export of setting BirthDeathCascade (canonical) 
+// date: 2022-12-23 17:57:39.921 
+
+directive simulation {final=50.0; points=10000}
+directive simulator stochastic
+
+| ->{10.0} A                                // b1
+| A ->{5.0} B                               // b2
+| B ->{5.0} C                               // b3
+| C ->{5.0} D                               // b4
+| D ->{5.0} E                               // b5
+| A ->{1.0}                                 // d1
+| B ->{1.0}                                 // d2
+| C ->{1.0}                                 // d3
+| D ->{1.0}                                 // d4
+| E ->{1.0}                                 // d5
+
+
+
+
+
+(*
+JSON export of setting: 
+
+{
+  "name": "BirthDeathCascade (canonical)",
+  "initial_state": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "bounds": [
+    64,
+    64,
+    64,
+    64,
+    64
+  ],
+  "population_level_growth_factor": 2.0,
+  "crn": {
+    "name": "BirthDeathCascade",
+    "speciesNames": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 10.0,
+        "label": "b1"
+      },
+      {
+        "reactants": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 5.0,
+        "label": "b2"
+      },
+      {
+        "reactants": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "rate_constant": 5.0,
+        "label": "b3"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "rate_constant": 5.0,
+        "label": "b4"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "rate_constant": 5.0,
+        "label": "b5"
+      },
+      {
+        "reactants": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d1"
+      },
+      {
+        "reactants": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d2"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d3"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d4"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "d5"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 47
+      },
+      {
+        "min": 48,
+        "rep": 56,
+        "max": 64
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 47
+      },
+      {
+        "min": 48,
+        "rep": 56,
+        "max": 64
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 47
+      },
+      {
+        "min": 48,
+        "rep": 56,
+        "max": 64
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 47
+      },
+      {
+        "min": 48,
+        "rep": 56,
+        "max": 64
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 47
+      },
+      {
+        "min": 48,
+        "rep": 56,
+        "max": 64
+      }
+    ]
+  ]
+}
+*)

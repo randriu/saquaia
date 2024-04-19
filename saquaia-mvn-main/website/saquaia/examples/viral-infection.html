@@ -1,0 +1,70 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SAQuaiA | Getting started</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/saquaia/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Viral Infection</h2>
+    <hr>
+
+<h3>Model definition</h3>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Viral Infection</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Species (4)</td>
+            <td>DNA, RNA, P, V</td>
+        </tr>
+        <tr>
+            <td>Initial state</td>
+            <td>1 × RNA</td>
+        </tr>
+        <tr>
+            <td>End time</td>
+            <td>200s</td>
+        </tr>
+        <tr>
+            <td rowspan="6">Reactions (6)</td>
+            <td>d0: DNA + P &#8594; <sup>(1.125E-5 × DNA × P)</sup> &#8594; V</td>
+        </tr>
+        <tr>
+            <td>x: RNA &#8594; <sup>(1000 × RNA)</sup> &#8594; RNA + P</td>
+        </tr>
+        <tr>
+            <td>t: DNA &#8594; <sup>(0.025 × DNA)</sup> &#8594; DNA + RNA</td>
+        </tr>
+        <tr>
+            <td>p: RNA &#8594; <sup>(1 × RNA)</sup> &#8594; DNA + RNA</td>
+        </tr>
+        <tr>
+            <td>d2: RNA &#8594; <sup>(0.25 × RNA)</sup> &#8594; 0</td>
+        </tr>
+        <tr>
+            <td>d5: P &#8594; <sup>(1.9985 × P)</sup> &#8594; 0</td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+		<h5 id="sources">Sources</h5>
+		<p><b>[1]</b> Srivastava, R., You, L., Summers, J., Yin, J.: Stochastic vs. deterministic modeling of intracellular viral kinetics. Journal of Theoretical Biology 218(3), 309–321 (2002)</p>
+  </div>
+</body>
+</html>

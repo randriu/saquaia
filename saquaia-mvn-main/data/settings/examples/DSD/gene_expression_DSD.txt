@@ -1,0 +1,294 @@
+// SeQuaiA export of setting GeneExpression 
+// date: 2022-12-23 17:22:09.369 
+
+directive simulation {final=500.0; points=10000}
+directive simulator stochastic
+
+| D_off ->{0.1} D_on                        // act
+| D_on ->{0.1} D_off                        // deact
+| D_on ->{10.0} RNA + D_on                  // prodR
+| RNA ->{1.0}                               // decayR
+| RNA ->{10.0} P + RNA                      // prodP
+| P ->{1.0}                                 // decayP
+| P + D_off ->{0.001} P + D_on              // act
+
+| 1 P
+| 1 RNA
+| 1 D_off
+
+
+
+
+(*
+JSON export of setting: 
+
+{
+  "name": "GeneExpression",
+  "initial_state": [
+    1,
+    1,
+    1,
+    0
+  ],
+  "bounds": [
+    1000,
+    1000,
+    1,
+    1
+  ],
+  "population_level_growth_factor": 2.0,
+  "crn": {
+    "name": "GeneExpression",
+    "speciesNames": [
+      "P",
+      "RNA",
+      "D_off",
+      "D_on"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rate_constant": 0.1,
+        "label": "act"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "products": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "rate_constant": 0.1,
+        "label": "deact"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "products": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "rate_constant": 10.0,
+        "label": "prodR"
+      },
+      {
+        "reactants": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "decayR"
+      },
+      {
+        "reactants": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "products": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "rate_constant": 10.0,
+        "label": "prodP"
+      },
+      {
+        "reactants": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "decayP"
+      },
+      {
+        "reactants": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "products": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "rate_constant": 0.001,
+        "label": "act"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      },
+      {
+        "min": 63,
+        "rep": 94,
+        "max": 126
+      },
+      {
+        "min": 127,
+        "rep": 190,
+        "max": 254
+      },
+      {
+        "min": 255,
+        "rep": 382,
+        "max": 510
+      },
+      {
+        "min": 511,
+        "rep": 756,
+        "max": 1000
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      },
+      {
+        "min": 63,
+        "rep": 94,
+        "max": 126
+      },
+      {
+        "min": 127,
+        "rep": 190,
+        "max": 254
+      },
+      {
+        "min": 255,
+        "rep": 382,
+        "max": 510
+      },
+      {
+        "min": 511,
+        "rep": 756,
+        "max": 1000
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      }
+    ]
+  ]
+}
+*)

@@ -1,0 +1,71 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SeQuaiA | Visualization options</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Documentation</h2>
+    <p>Analysis - Visualization options  |  <a href="/documentation.html">Back to contents</a></p>
+    <hr>
+    <p>Before you can start with the visualization, make sure you have performed an analysis. SeQuaiA offers a variety of visualization options. In the following, we will explain them in detail.</p>
+
+<h5 id="minimum-iteration-and-maximum-iteration">Minimum iteration and maximum iteration</h5>
+<p>With minimum iteration and maximum iteration you can determine which states to display. SeQuaiA only displays states that are discovered within the minimum iteration and maximum iteration. This is useful when you are dealing with a large system.</p>
+
+<h5 id="grouping">Grouping</h5>
+<p>By default states are grouped by iteration and iteration SCCs, i.e. all states with the same iteration number are grouped together and within this group they are grouped together again if they belong to the same strongly-connected component. You can also group the states only by iteration (number) or iteration SCCs.</p>
+
+<h5 id="colorization">Colorization</h5>
+<p><b>Colorize iteration:</b> The states are colored according to their iteration (number), i.e. all states discovered within the same iteration have the same color. The lower the iteration number, the more red the color. The higher the iteration number, the more blue the color.</p>
+
+<p><b>Colorize steady state:</b> The states are colored according to the steady-state distribution of the whole system. The darker the shade of red, the more probability mass is located in that state.</p>
+
+<p><b>Colorize steady state in SCCs:</b> The states are colored according to the steady-state distribution of the strongly-connected component they belong to. The darker the shade of red, the more probability mass is located in that state. In the case that a strongly-connected component consists of only one state, the entire probability mass is located in that state.</p>
+
+<p><b>Colorize refinement suggestions:</b> Colorizes the states where non-determinism is present in blue and colorizes states where high level degradation is present in red.</p>
+
+<p><b>Colorize correlation:</b> Two buttons below the combobox appear, where you can edit two correlations. If you press one of the buttons, a dialog will open, prompting you to add value pairs.</p>
+
+<h5 id="view">View</h5>
+<p><b>Expanded view:</b> The states are displayed individually</p>
+
+<p><b>Collapsed view:</b> The states belonging to the same group (e.g. same iteration, same SCC) are collapsed into one single state.</p>
+
+<h5 id="image-width">Image width</h5>
+<p>Determines the width of the resulting image in pixel. The exported image will also have the specified width.</p>
+
+<h5 id="displaying-the-visualization">Displaying the visualization</h5>
+<p>For small models you can use the in-built view, by clicking <i>Visualize</i>. For larger models, you may want to use <i>Export to DOT</i> to visualize the model with an external tool.</p>
+
+
+    
+    
+
+  
+
+  
+
+  <div id="post-nav">
+      
+      <a rel="prev" class="mr-2 prev pag btn btn-outline-secondary" href="/documentation/3.html" role="button">Previous page: Model properties</a>
+      
+      
+      <a rel="next" class="next pag btn btn-outline-secondary" href="/documentation/5.html" role="button">Next page: Mean simulation</a>
+      
+  </div>
+
+</body>
+</html>

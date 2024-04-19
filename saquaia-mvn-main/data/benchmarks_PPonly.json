@@ -1,0 +1,195 @@
+[
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -5025562857975149833
+  },
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": 5111195811822994797
+  },
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 100,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -6169532649852302182
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 8865034956231574663
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_SSA2",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 10000,
+    "repeat": 1,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 5380112710085299282
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_SEGSSA",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": -6702724865295600521
+  },
+  {
+    "type": "TRANSIENTNEW",
+    "name": "PP_SEGHYB",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "adaptive": true,
+      "max_memory": 5000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10,
+      "memory_fraction_for_abs_cache": 0.1
+    },
+    "sims": 10000,
+    "repeat": 10,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 172800000,
+    "seed": 6809089882916169883
+  }
+]

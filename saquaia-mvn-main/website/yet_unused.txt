@@ -1,0 +1,28 @@
+<p>Chemical reaction networks (CRNs) play a fundamental role in analysis and design of biochemical systems. They induce continuous-time stochastic systems,
+  whose analysis is a computationally intensive task.</p>
+
+
+<h4>Basic Idea</h4>
+<p>The implemented approach is based on two steps. Firstly, a system abstraction is computed, where the states and transitions are abstracted by considering population ranges. Additionally, transitions are accelerated, taking segments of paths into account.
+  The resulting models are small enough to allow for a synoptic observation of the model dynamics. Secondly, it performs semi-quantitative analysis, focusing on the most probable behaviours and more qualitative, global descriptions, such as oscillation, rather than fully quantitative sequences of exact transient distributions.
+  This yields explainable models and is a sufficient and computationally cheaper technique.</p>
+<h4>Developer</h4>
+<p>SeQuaiA has been developed and maintained by Milan Češka (Brno University of Technology), Jan Křetínský (Technical University of Munich), Martin Helfrich (Technical University of Munich) and Calvin Chau (Technical University of Munich).</p>
+
+
+<div class="mt-auto">
+                    <a class="btn btn-secondary btn-lg mr-2" href="https://syncandshare.lrz.de/getlink/fiAQrFBysxuP5ZXmj1da7x/20230322_saquaia.zip" role="button">Go to website</a>
+                </div>
+				
+				
+				<div class="alert alert-warning" role="alert">
+  Changing the dimension will completely reset the model, since the reactions, init state, etc. become invalid.
+</div>
+
+<div class="alert alert-warning" role="alert">
+Note that you will only be able to export the image, if you visualize the system first.
+</div>
+
+<h5>SAQuaia</h5>
+<a class="btn btn-secondary btn-lg mr-2" target="_blank" href="https://syncandshare.lrz.de/getlink/fiAQrFBysxuP5ZXmj1da7x/20230322_saquaia.zip" role="button">SAQuaiA</a>
+<hr>

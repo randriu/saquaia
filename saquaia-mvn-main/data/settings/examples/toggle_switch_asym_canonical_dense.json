@@ -1,0 +1,367 @@
+{
+  "name": "ToggleSwitchAsym (canonical, dense)",
+  "initial_state": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+  ],
+  "bounds": [
+    1,
+    1,
+    1,
+    1,
+    256,
+    256
+  ],
+  "population_level_growth_factor": 1.5,
+  "crn": {
+    "name": "ToggleSwitchAsym",
+    "speciesNames": [
+      "G1_on",
+      "G1_off",
+      "G2_on",
+      "G2_off",
+      "P1",
+      "P2"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "rate_constant": 100.873131,
+        "label": "prod1"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "rate_constant": 111.966802,
+        "label": "prod2"
+      },
+      {
+        "reactants": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "products": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 6.86173329E-4,
+        "label": "bind1"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          1,
+          0,
+          2,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "rate_constant": 6.59146786E-4,
+        "label": "bind2"
+      },
+      {
+        "reactants": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "rate_constant": 0.18306819,
+        "label": "unbind1"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          1,
+          0,
+          2,
+          0
+        ],
+        "rate_constant": 0.426048009,
+        "label": "unbind2"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.82719256,
+        "label": "deg1"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 0.917581745,
+        "label": "deg2"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      },
+      {
+        "min": 2,
+        "rep": 2,
+        "max": 3
+      },
+      {
+        "min": 4,
+        "rep": 5,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 9,
+        "max": 11
+      },
+      {
+        "min": 12,
+        "rep": 15,
+        "max": 19
+      },
+      {
+        "min": 20,
+        "rep": 25,
+        "max": 31
+      },
+      {
+        "min": 32,
+        "rep": 40,
+        "max": 49
+      },
+      {
+        "min": 50,
+        "rep": 63,
+        "max": 76
+      },
+      {
+        "min": 77,
+        "rep": 97,
+        "max": 117
+      },
+      {
+        "min": 118,
+        "rep": 148,
+        "max": 179
+      },
+      {
+        "min": 180,
+        "rep": 218,
+        "max": 256
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      },
+      {
+        "min": 2,
+        "rep": 2,
+        "max": 3
+      },
+      {
+        "min": 4,
+        "rep": 5,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 9,
+        "max": 11
+      },
+      {
+        "min": 12,
+        "rep": 15,
+        "max": 19
+      },
+      {
+        "min": 20,
+        "rep": 25,
+        "max": 31
+      },
+      {
+        "min": 32,
+        "rep": 40,
+        "max": 49
+      },
+      {
+        "min": 50,
+        "rep": 63,
+        "max": 76
+      },
+      {
+        "min": 77,
+        "rep": 97,
+        "max": 117
+      },
+      {
+        "min": 118,
+        "rep": 148,
+        "max": 179
+      },
+      {
+        "min": 180,
+        "rep": 218,
+        "max": 256
+      }
+    ]
+  ]
+}

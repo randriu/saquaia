@@ -1,0 +1,35 @@
+[
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_HYB_1.5",
+    "simconf": {
+      "type": "HYB",
+      "threshold_tau": 5,
+      "threshold_ode": 400,
+      "factor_SSA_to_TAU": 2.0,
+      "factor_TAU_to_ODE": 2.0,
+      "ssa_config": {
+        "type": "SSA"
+      },
+      "tau_config": {
+        "epsilon": 0.03,
+        "type": "TAU"
+      },
+      "ode_config": {
+        "min_step": 1.0E-12,
+        "max_step": 100.0,
+        "scal_absolute_tolerance": 0.001,
+        "scal_relative_tolerance": 1.0E-8,
+        "type": "ODE"
+      }
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "plot_first": 10,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -5025562857975149833
+  }
+]

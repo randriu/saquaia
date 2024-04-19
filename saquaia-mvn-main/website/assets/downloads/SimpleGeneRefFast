@@ -1,0 +1,1 @@
+{"envelope":3.0,"reactions":[{"reactant":[-1,0,0],"product":[1,0,1],"rate":10.0,"label":"p"},{"reactant":[0,0,-1],"product":[0,0,0],"rate":0.1,"label":"d"},{"reactant":[-1,0,-1],"product":[0,1,0],"rate":0.01,"label":"b"}],"name":"SimpleGene","dimension":3,"init":[1,0,0],"bound":[1,1,300],"discretization":[[1],[1],[10,20,50]]}

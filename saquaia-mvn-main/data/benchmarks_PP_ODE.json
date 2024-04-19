@@ -1,0 +1,21 @@
+[
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_ODE",
+    "simconf": {
+	  "type": "ODE",
+	  "min_step": 1.0E-12,
+	  "max_step": 100.0,
+	  "scal_absolute_tolerance": 0.001,
+	  "scal_relative_tolerance": 1.0E-8
+	},
+    "sims": 1,
+    "repeat": 1,
+    "plot_first": 100,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -5025562857975149833
+  }
+]

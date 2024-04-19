@@ -1,0 +1,89 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SeQuaiA | Extended gene expression</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Extended gene expression</h2>
+    <hr>
+    <p>In the following, we demonstrate SeQuaiA’s visualization features on a more complicated gene expression model <b>[1,2]</b>, which is widely used for benchmarking of CRN analyzers. The model can be downloaded <a href="/download.html">here</a>.</p>
+
+<h5 id="the-model-specification">The model specification</h5>
+<p>The reactions of the network can be seen below.</p>
+
+<p><img src="/assets/img/examples/extended-gene-reaction.png" class="border w-40 img-responsive" alt="Responsive image" /></p>
+
+<p>We consider r1 = r2 = 0.1.</p>
+
+<p>The specification of the extended gene expression in SeQuaiA can be seen below.</p>
+
+<p><img src="/assets/img/examples/extended-gene-model.png" class="border w-40 img-responsive" alt="Responsive image" /></p>
+
+<h5 id="the-abstraction">The abstraction</h5>
+<p>The abstraction of the of model can be seen below. The envelope is set to 5.</p>
+
+<div class="border w-100 h-50" style="overflow:scroll;"><img src="/assets/img/examples/extended-gene-blank.png" width="100%" /></div>
+<p><br /></p>
+
+<h5 id="first-step">First step</h5>
+<p>Now we want to visualize a correlation, i.e. given a list pairs, we want to colorize the states where the described correlation is satisfied.
+In the following, we want to colorize the states where we have population level 1 and 0, 0 and 1, 2 and 0 and 3 and 0 for <i>P</i> and <i>D_off</i>, respectively.</p>
+
+<p>Once you have opened the model, make sure you have clicked <i>Perform analysis</i> in the <i>Model properties</i> panel. Go to the <i>Visualization</i> panel and select <i>Colorize correlation</i> in the <i>Colorization</i> section. Click <i>Edit correlation 1</i>, a dialog opens. Select <i>P</i> and <i>D_off</i> and enter the following pairs: (1,0),(0,1),(2,0),(3,0). Then close the dialog and click <i>Visualize</i>. The result can be seen below. We can see that there is indeed a correlation between high amounts of proteins and DNA being on.</p>
+
+<div class="border w-100 h-50" style="overflow:scroll;"><img src="/assets/img/examples/extended-gene-corr.png" width="100%" /></div>
+<p><br /></p>
+
+<p>Now we can also visualize the steady state of the system by selecting <i>Colorize steady state</i> in the <i>Colorization</i> section. Then click <i>Visualize</i>. The result can be seen below.</p>
+
+<div class="border w-100 h-50" style="overflow:scroll;"><img src="/assets/img/examples/extended-gene-steady.png" width="100%" /></div>
+<p><br /></p>
+
+<h5 id="second-step">Second step</h5>
+<p>Now we can further adjust the visualization. In the <i>Grouping</i> section, select <i>Group by iteration SCCs</i>, grouping the states according the SCC they belong to within the iteration they are discovered. Because the interesting states (colored in blue) are discovered within iteration 1, we set <i>Minimum iteration</i> to 0 and <i>Maximum iteration</i> to 1. Now only states discovered within the first iteration are displayed. Then click <i>Visualize</i>. The result can be seen below.</p>
+
+<div class="border w-100 h-50" style="overflow:scroll;"><img src="/assets/img/examples/extended-gene-corr-iter.png" width="100%" /></div>
+<p><br />
+As before, we can also have a look at the steady state. The result can be seen below.</p>
+
+<div class="border w-100 h-50" style="overflow:scroll;"><img src="/assets/img/examples/extended-gene-steady-iter.png" width="100%" /></div>
+<p><br /></p>
+
+<h5 id="third-step">Third step</h5>
+
+<p>Finally, we want to change the <i>View</i> to have a more compact visualization. Select <i>Collapsed aggregates</i> in the <i>View</i> section. All the states that are grouped together, now form a single state. Then click <i>Visualize</i>. The result can be seen below.</p>
+
+<div class="border w-100 h-50" style="overflow:scroll;"><img src="/assets/img/examples/extended-gene-corr-coll.png" width="100%" /></div>
+<p><br /></p>
+
+<p>And again, we also have a look at the steady state. the result can be seen below.</p>
+
+<div class="border w-100 h-50" style="overflow:scroll;"><img src="/assets/img/examples/extended-gene-steady-coll.png" width="100%" /></div>
+<p><br /></p>
+
+<p>Now it becomes clear that we spend most of the time in the correlated states. In general, the <i>Collapsed aggregate</i> view is useful for ignoring uninteresting behavior within the components.</p>
+
+<h5 id="conclusion">Conclusion</h5>
+<p>We have demonstrated that the workflow for visualizing quantitative information is useful. Particularly, we have shown that the system spends most of the time in the correlated states.</p>
+
+<h5 id="sources">Sources</h5>
+<p><b>[1]</b> Golding, I., Paulsson, J., Zawilski, S.M., Cox, E.C.: Real-time kinetics of gene activity in individual bacteria. Cell 123(6), 1025–1036 (2005)</p>
+<p><b>[2]</b> Hasenauer, J., Wolf, V., Kazeroonian, A., Theis, F.: Method of conditional moments (MCM) for the chemical master equation. Journal of Mathematical Biology pp. 1–49 (2013). <a target="_blank" href="https://doi.org/10.1007/s00285-013-0711-5">https://doi.org/10.1007/s00285-013-0711-5</a></p>
+
+    <hr>
+  </div>
+</body>
+</html>

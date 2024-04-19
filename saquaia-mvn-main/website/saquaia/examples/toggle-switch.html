@@ -1,0 +1,81 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SAQuaiA | Getting started</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/saquaia/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Toggle Switch</h2>
+    <hr>
+
+<h3>Model definition</h3>
+<table>
+    <thead>
+        <tr>
+            <th colspan="3">Toggle Switch</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Species (6)</td>
+            <td colspan="2">mA, mB, sA, sB, pA, pB</td>
+        </tr>
+        <tr>
+            <td>Initial state</td>
+            <td colspan="2">0</td>
+        </tr>
+        <tr>
+            <td>End time</td>
+            <td colspan="2">50000s</td>
+        </tr>
+        <tr>
+            <td rowspan="14">Reactions (14)</td>
+            <td>r0: 0 &#8594; <sup>(1)</sup> &#8594; mA</td>
+            <td>r7: mB + sA &#8594; <sup>(20 × mB × sA)</sup> &#8594; sA</td>
+        </tr>
+        <tr>
+            <td>r1: 0 &#8594; <sup>(1)</sup> &#8594; mB</td>
+            <td>r8: mA + sB &#8594; <sup>(20 × mA × sB)</sup> &#8594; sB</td>
+        </tr>
+        <tr>
+            <td>r2: mA &#8594; <sup>(0.1 × mA)</sup> &#8594; 0</td>
+            <td>r9: pB &#8594; <sup>(0.1 × pB)</sup> &#8594; 0</td>
+        </tr>
+        <tr>
+            <td>r3: mB &#8594; <sup>(0.1 × mB)</sup> &#8594; 0</td>
+            <td>r10: sA &#8594; <sup>(0.01 × sA)</sup> &#8594; 0</td>
+        </tr>
+        <tr>
+            <td>r4: pA &#8594; <sup>(0.1 × pA)</sup> &#8594; 0</td>
+            <td>r11: sB &#8594; <sup>(0.01 × sB)</sup> &#8594; 0</td>
+        </tr>
+        <tr>
+            <td>r5: mA &#8594; <sup>(5 × mA)</sup> &#8594; sA</td>
+            <td>r12: sA &#8594; <sup>(10 × sA)</sup> &#8594; sA + pA</td>
+        </tr>
+        <tr>
+            <td>r6: mB &#8594; <sup>(5 × mB)</sup> &#8594; sB</td>
+            <td>r13: sB &#8594; <sup>(10 × sB)</sup> &#8594; sB + pB</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+		<h5 id="sources">Sources</h5>
+		<p><b>[1]</b> Hepp, B., Gupta, A., Khammash, M.: Adaptive hybrid simulations for multiscale stochastic reaction networks. The Journal of Chemical Physics 142(3), 034118 (2015)</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SAQuaiA | Analyzing the model</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/saquaia/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Analyzing the model</h2>
+    <hr>
+    <div class="row">
+      <div class="col-3">
+        <ul id="side-nav" class="list-group">
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/1.html">Getting started</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/2.html">CRN & Setting</a>
+  </li>
+  
+  <li class="list-group-item active-li">
+    <a id="active-link" href="/saquaia/quickstart/3.html">Analyzing the model</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/4.html">Analysis results</a>
+  </li>
+  
+  <li class="list-group-item ">
+    <a  href="/saquaia/quickstart/5.html">Next steps</a>
+  </li>
+  
+</ul>
+
+      </div>
+      <div class="col" id="content">
+        <h1 id="analyzing-the-model">Analyzing the model</h1>
+<hr />
+<p>Fastest way to run a simulation is the <i>Simulator</i> pane.</p>
+<p><img src="/assets/img/simulator.png" class="w-50 img-responsive" alt="Responsive image" /></p>
+
+<p>The combo box at the top of the pane provides a range of simulation methods implemented in the application. Clicking the <i>Simulate</i> button initiates a simulation. Clicking the <i>Transient analysis!</i> button starts transient analysis, performing a number of simulations that is specified in the edit box at the bottom.</p>
+
+<p>Another way to execute simulations is through the <i>Run</i> tab in the Menu bar, which also offers the option to perform multiple simulations without transient analysis by a single click.</p>
+
+<p>Information about the simulation run, such as progress or simulation time, can be viewed in the information section at the bottom.</p>
+<p><img src="/assets/img/sim-info.png" class="w-75 img-responsive" alt="Responsive image" /></p>
+
+<h2 id="troubleshooting">Segmental simulations</h2>
+<p>Since segmental simulations (Segmental SSA and Segmental HYB) use memory as a method for acceleration, the <i>Simulator</i> tab in the Menu bar provides various options for users to manage details of these analyses. Each time a new segmental simulation is run, it could be sped up by the segments already memorized from previous runs. The <i>Simulator</i> tab allows the user to clear this memory or display information about it, as shown below.</p>
+<p><img src="/assets/img/memory-info.png" class="w-75 img-responsive" alt="Responsive image" /></p>
+
+<p>Lastly, the tab allows the user to fully configure the segmental analysis by selecting the <i>New simulator</i> option. This action opens a dialog box with detailed, configurable information about the segmental analysis settings.</p>
+<p><img src="/assets/img/simulator-settings.png" class="w-75 img-responsive" alt="Responsive image" /></p>
+        <br>
+        
+    
+
+  
+
+  
+
+  <div id="post-nav">
+      
+      <a rel="prev" class="mr-2 prev pag btn btn-outline-secondary" href="/saquaia/quickstart/2.html" role="button">Previous page: CRN & Setting</a>
+      
+      
+      <a rel="next" class="next pag btn btn-outline-secondary" href="/saquaia/quickstart/4.html" role="button">Next page: Analysis results</a>
+      
+  </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

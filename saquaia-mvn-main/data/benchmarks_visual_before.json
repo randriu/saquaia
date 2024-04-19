@@ -1,0 +1,417 @@
+[
+  {
+    "type": "VISUAL",
+    "name": "EC_Visual_SEG+1GB_g0.0359_HYB_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 7200000,
+    "seed": 3272055439932147596
+  },
+  {
+    "type": "VISUAL",
+    "name": "EC_Visual_SEG+1GB_g0.0359_SSA_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "c": 1.5,
+    "end_t": 2000.0,
+    "timeout": 7200000,
+    "seed": 7130900098642117381
+  },
+  {
+    "type": "VISUAL",
+    "name": "EC_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "ecoli_canonical.json",
+    "end_t": 2000.0,
+    "timeout": 7200000,
+    "seed": -4613416830416070574
+  },
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_SEG+1GB_g0.0359_HYB_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": 5694868678511409995
+  },
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_SEG+1GB_g0.0359_SSA_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "predator_prey_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -5843495416241995736
+  },
+  {
+    "type": "VISUAL",
+    "name": "PP_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "predator_prey_canonical.json",
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -5025562857975149833
+  },
+  {
+    "type": "VISUAL",
+    "name": "RP_Visual_SEG+1GB_g0.0359_HYB_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 8552898714322622292
+  },
+  {
+    "type": "VISUAL",
+    "name": "RP_Visual_SEG+1GB_g0.0359_SSA_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "repressilator_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 5086654115216342560
+  },
+  {
+    "type": "VISUAL",
+    "name": "RP_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "repressilator_canonical.json",
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 6802844026563419272
+  },
+  {
+    "type": "VISUAL",
+    "name": "TS_Visual_SEG+1GB_g0.0359_HYB_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -1782466964123969572
+  },
+  {
+    "type": "VISUAL",
+    "name": "TS_Visual_SEG+1GB_g0.0359_SSA_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_canonical.json",
+    "c": 1.5,
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": -6169532649852302182
+  },
+  {
+    "type": "VISUAL",
+    "name": "TS_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "toggle_switch_advanced_canonical.json",
+    "end_t": 50000.0,
+    "timeout": 7200000,
+    "seed": 5111195811822994797
+  },
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_SEG+1GB_g0.0359_HYB_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "HYB",
+        "threshold_tau": 5,
+        "threshold_ode": 400,
+        "factor_SSA_to_TAU": 2,
+        "factor_TAU_to_ODE": 2,
+        "ssa_config": {
+          "type": "SSA"
+        },
+        "tau_config": {
+          "epsilon": 0.03,
+          "type": "TAU"
+        },
+        "ode_config": {
+          "min_step": 1.0E-12,
+          "max_step": 100.0,
+          "scal_absolute_tolerance": 0.001,
+          "scal_relative_tolerance": 1.0E-8,
+          "type": "ODE"
+        }
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": 8051837266862454915
+  },
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_SEG+1GB_g0.0359_SSA_1.5",
+    "simconf": {
+      "type": "SEG",
+      "baseConfig": {
+        "type": "SSA"
+      },
+      "useSummaries": true,
+      "max_memory": 1000000000,
+      "memory_function": {
+        "type": "GROWING",
+        "s": 0.0359
+      },
+      "memory_free_target_fraction": 0.85,
+      "max_segment_count_per_direction": 10,
+      "min_segments_for_stats": 10
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "viral_withV_canonical.json",
+    "c": 1.5,
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -1488139573943419793
+  },
+  {
+    "type": "VISUAL",
+    "name": "VI_Visual_SSA",
+    "simconf": {
+      "type": "SSA"
+    },
+    "sims": 1000,
+    "repeat": 10,
+    "example": "viral_withV_canonical.json",
+    "end_t": 200.0,
+    "timeout": 7200000,
+    "seed": -4004755535478349341
+  }
+]

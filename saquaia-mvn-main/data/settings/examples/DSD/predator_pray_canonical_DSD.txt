@@ -1,0 +1,226 @@
+// SeQuaiA export of setting Predator_Prey (canonical) 
+// date: 2023-01-19 01:37:08.501 
+
+directive simulation {final=200.0; points=10000}
+directive simulator stochastic
+
+// initial state 
+| 200 Pred
+| 200 Prey
+
+// reactions 
+| Prey ->{1.0} 2Prey                        // rep
+| Pred + Prey ->{0.005} 2Pred               // eat
+| Pred ->{1.0}                              // starve
+
+
+
+
+
+(*
+JSON export of setting: 
+
+{
+  "name": "Predator_Prey (canonical)",
+  "initial_state": [
+    200,
+    200
+  ],
+  "bounds": [
+    10000,
+    10000
+  ],
+  "population_level_growth_factor": 2.0,
+  "crn": {
+    "name": "Predator_Prey",
+    "speciesNames": [
+      "Pred",
+      "Prey"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          0,
+          1
+        ],
+        "products": [
+          0,
+          2
+        ],
+        "rate_constant": 1.0,
+        "label": "rep"
+      },
+      {
+        "reactants": [
+          1,
+          1
+        ],
+        "products": [
+          2,
+          0
+        ],
+        "rate_constant": 0.005,
+        "label": "eat"
+      },
+      {
+        "reactants": [
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "starve"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      },
+      {
+        "min": 63,
+        "rep": 94,
+        "max": 126
+      },
+      {
+        "min": 127,
+        "rep": 190,
+        "max": 254
+      },
+      {
+        "min": 255,
+        "rep": 382,
+        "max": 510
+      },
+      {
+        "min": 511,
+        "rep": 766,
+        "max": 1022
+      },
+      {
+        "min": 1023,
+        "rep": 1534,
+        "max": 2046
+      },
+      {
+        "min": 2047,
+        "rep": 3070,
+        "max": 4094
+      },
+      {
+        "min": 4095,
+        "rep": 5571,
+        "max": 7047
+      },
+      {
+        "min": 7048,
+        "rep": 8524,
+        "max": 10000
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      },
+      {
+        "min": 63,
+        "rep": 94,
+        "max": 126
+      },
+      {
+        "min": 127,
+        "rep": 190,
+        "max": 254
+      },
+      {
+        "min": 255,
+        "rep": 382,
+        "max": 510
+      },
+      {
+        "min": 511,
+        "rep": 766,
+        "max": 1022
+      },
+      {
+        "min": 1023,
+        "rep": 1534,
+        "max": 2046
+      },
+      {
+        "min": 2047,
+        "rep": 3070,
+        "max": 4094
+      },
+      {
+        "min": 4095,
+        "rep": 5571,
+        "max": 7047
+      },
+      {
+        "min": 7048,
+        "rep": 8524,
+        "max": 10000
+      }
+    ]
+  ]
+}
+*)

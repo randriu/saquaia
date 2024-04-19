@@ -1,0 +1,313 @@
+{
+  "name": "ViralWithV (canonical)",
+  "initial_state": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "bounds": [
+    1024,
+    128,
+    65526,
+    8192
+  ],
+  "population_level_growth_factor": 2.0,
+  "crn": {
+    "name": "ViralWithV",
+    "speciesNames": [
+      "DNA",
+      "RNA",
+      "P",
+      "V"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "rate_constant": 1.125E-5,
+        "label": "d0"
+      },
+      {
+        "reactants": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "products": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "rate_constant": 0.025,
+        "label": "t"
+      },
+      {
+        "reactants": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 0.25,
+        "label": "d2"
+      },
+      {
+        "reactants": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "products": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "rate_constant": 1000.0,
+        "label": "x"
+      },
+      {
+        "reactants": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "products": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "p"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 1.9985,
+        "label": "d5"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      },
+      {
+        "min": 63,
+        "rep": 94,
+        "max": 126
+      },
+      {
+        "min": 127,
+        "rep": 190,
+        "max": 254
+      },
+      {
+        "min": 255,
+        "rep": 382,
+        "max": 510
+      },
+      {
+        "min": 511,
+        "rep": 639,
+        "max": 767
+      },
+      {
+        "min": 768,
+        "rep": 896,
+        "max": 1024
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      },
+      {
+        "min": 63,
+        "rep": 79,
+        "max": 95
+      },
+      {
+        "min": 96,
+        "rep": 112,
+        "max": 128
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 6
+      },
+      {
+        "min": 7,
+        "rep": 10,
+        "max": 14
+      },
+      {
+        "min": 15,
+        "rep": 22,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 46,
+        "max": 62
+      },
+      {
+        "min": 63,
+        "rep": 94,
+        "max": 126
+      },
+      {
+        "min": 127,
+        "rep": 190,
+        "max": 254
+      },
+      {
+        "min": 255,
+        "rep": 382,
+        "max": 510
+      },
+      {
+        "min": 511,
+        "rep": 766,
+        "max": 1022
+      },
+      {
+        "min": 1023,
+        "rep": 1534,
+        "max": 2046
+      },
+      {
+        "min": 2047,
+        "rep": 3070,
+        "max": 4094
+      },
+      {
+        "min": 4095,
+        "rep": 6142,
+        "max": 8190
+      },
+      {
+        "min": 8191,
+        "rep": 12286,
+        "max": 16382
+      },
+      {
+        "min": 16383,
+        "rep": 24574,
+        "max": 32766
+      },
+      {
+        "min": 32767,
+        "rep": 49147,
+        "max": 65526
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 4096,
+        "max": 8192
+      }
+    ]
+  ]
+}

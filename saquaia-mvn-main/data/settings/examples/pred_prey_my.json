@@ -1,0 +1,56 @@
+{
+  "name": "Predator_Prey (roman)",
+  "initial_state": [
+    200,
+    200
+  ],
+  "bounds": [
+    10000,
+    10000
+  ],
+  "crn": {
+    "name": "Predator_Prey",
+    "speciesNames": [
+      "Pred",
+      "Prey"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          0,
+          1
+        ],
+        "products": [
+          0,
+          2
+        ],
+        "rate_constant": 1.0,
+        "label": "rep"
+      },
+      {
+        "reactants": [
+          1,
+          1
+        ],
+        "products": [
+          2,
+          0
+        ],
+        "rate_constant": 0.005,
+        "label": "eat"
+      },
+      {
+        "reactants": [
+          1,
+          0
+        ],
+        "products": [
+          0,
+          0
+        ],
+        "rate_constant": 1.0,
+        "label": "starve"
+      }
+    ]
+  }
+}

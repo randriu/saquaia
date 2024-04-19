@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SeQuaiA | Getting started</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+<div class="container section">
+  <h3 class="display-4">SeQuaiA</h3>
+  <p class="lead">A Scalable Tool for Semi-Quantitative Analysis of Chemical Reaction Networks (CRNs)</p>
+  <hr class="my-4">
+  <p>Chemical reaction networks (CRNs) play a fundamental role in the analysis and design of biochemical systems. They give rise to continuous-time stochastic systems, the analysis of which is a computationally intensive task.</p>
+
+	<p>This tool implements semi-quantitative analysis of CRNs and offers:
+	<ul>
+		<li>Unprecedented scalability</li>
+		<li>Visualization of the system across a variety of configurations</li>
+		<li>Interpretable results</li>
+		<li>A novel concept of mean simulation, summarizing the typical behaviors of the system</li>
+	</ul>
+	</p>
+	<h4>Basic Concept</h4>
+	<p>The approach implemented relies on a two-step process. Initially, a system abstraction is computed, where states and transitions are abstracted by considering population ranges. Furthermore, transitions are accelerated by taking segments of paths into account. The resultant models are compact enough to permit a comprehensive observation of the model dynamics. Subsequently, it performs semi-quantitative analysis, focusing on the most probable behaviors and more qualitative, global descriptions, such as oscillation, rather than fully quantitative sequences of exact transient distributions. This results in comprehensible models and is a more efficient and computationally cheaper technique.</p>
+	<h4>Developers</h4>
+	<p>SeQuaiA has been developed and is maintained by Milan Češka (Brno University of Technology), Jan Křetínský (Technical University of Munich), Martin Helfrich (Technical University of Munich), and Calvin Chau (Technical University of Munich).</p>
+</div>
+
+</body>
+</html>

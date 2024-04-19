@@ -1,0 +1,119 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SAQuaiA | Getting started</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/saquaia/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Escherichia coli</h2>
+    <hr>
+
+<h3>Model definition</h3>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Escherichia coli</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Species (23)</td>
+            <td>PLac, RNAP, PLacRNAP, TrLacZ1, RbsLacZ, TrLacZ2, TrLacY1, RbsLacY, TrLacY2, Ribosome, RbsRibosomeLacZ, RbsRibosomeLacY, TrRbsLacZ, TrRbsLacY, LacZ, LacY, dgrLacZ, dgrLacY, dgrRbsLacZ, dgrRbsLacY, lactose, LacZlactose, product</td>
+        </tr>
+        <tr>
+            <td>Initial state</td>
+            <td>1 × PLac, 35 × RNAP, 350 × Ribosome</td>
+        </tr>
+        <tr>
+            <td>End time</td>
+            <td>2000s</td>
+        </tr>
+        <tr>
+            <td rowspan="22">Reactions (22)</td>
+            <td>r0: PLac + RNAP &#8594; <sup>(0.17 × PLac × RNAP)</sup> &#8594; PLacRNAP</td>
+        </tr>
+        <tr>
+            <td>r1: PLacRNAP &#8594; <sup>(10.0 × PLacRNAP)</sup> &#8594; PLac + RNAP</td>
+        </tr>
+        <tr>
+            <td>r2: PLacRNAP &#8594; <sup>(1.0 × PLacRNAP)</sup> &#8594; TrLacZ1</td>
+        </tr>
+        <tr>
+            <td>r3: TrLacZ1 &#8594; <sup>(1.0 × TrLacZ1)</sup> &#8594; PLac + RbsLacZ + TrLacZ2</td>
+        </tr>
+        <tr>
+            <td>r4: TrLacZ2 &#8594; <sup>(0.015 × TrLacZ2)</sup> &#8594; TrLacY1</td>
+        </tr>
+        <tr>
+            <td>r5: TrLacY1 &#8594; <sup>(1.0 × TrLacY1)</sup> &#8594; RbsLacY + TrLacY2</td>
+        </tr>
+        <tr>
+            <td>r6: TrLacY2 &#8594; <sup>(0.36 × TrLacY2)</sup> &#8594; RNAP</td>
+        </tr>
+        <tr>
+            <td>r7: RbsLacZ + Ribosome &#8594; <sup>(0.17 × RbsLacZ × Ribosome)</sup> &#8594; RbsRibosomeLacZ</td>
+        </tr>
+        <tr>
+            <td>r8: RbsLacY + Ribosome &#8594; <sup>(0.17 × RbsLacY × Ribosome)</sup> &#8594; RbsRibosomeLacY</td>
+        </tr>
+        <tr>
+            <td>r9: RbsRibosomeLacZ &#8594; <sup>(0.45 × RbsRibosomeLacZ)</sup> &#8594; RbsLacZ + Ribosome</td>
+        </tr>
+        <tr>
+            <td>r10: RbsRibosomeLacY &#8594; <sup>(0.45 × RbsRibosomeLacY)</sup> &#8594; RbsLacY + Ribosome</td>
+        </tr>
+        <tr>
+            <td>r11: RbsRibosomeLacZ &#8594; <sup>(0.4 × RbsRibosomeLacZ)</sup> &#8594; RbsLacZ + TrRbsLacZ</td>
+        </tr>
+        <tr>
+            <td>r12: RbsRibosomeLacY &#8594; <sup>(0.4 × RbsRibosomeLacY)</sup> &#8594; RbsLacY + TrRbsLacY</td>
+        </tr>
+        <tr>
+            <td>r13: TrRbsLacZ &#8594; <sup>(0.015 × TrRbsLacZ)</sup> &#8594; LacZ</td>
+        </tr>
+        <tr>
+            <td>r14: TrRbsLacY &#8594; <sup>(0.036 × TrRbsLacY)</sup> &#8594; LacY</td>
+        </tr>
+        <tr>
+            <td>r15: LacZ &#8594; <sup>(6.42E-5 × LacZ)</sup> &#8594; dgrLacZ</td>
+        </tr>
+        <tr>
+            <td>r16: LacY &#8594; <sup>(6.42E-5 × LacY)</sup> &#8594; dgrLacY</td>
+        </tr>
+        <tr>
+            <td>r17: RbsLacZ &#8594; <sup>(0.3 × RbsLacZ)</sup> &#8594; dgrRbsLacZ</td>
+        </tr>
+        <tr>
+            <td>r18: RbsLacY &#8594; <sup>(0.3 × RbsLacY)</sup> &#8594; dgrRbsLacY</td>
+        </tr>
+        <tr>
+            <td>r19: LacZ + lactose &#8594; <sup>(9.52E-5 × LacZ × lactose)</sup> &#8594; LacZlactose</td>
+        </tr>
+        <tr>
+            <td>r20: LacZlactose &#8594; <sup>(431.0 × LacZlactose)</sup> &#8594; LacZ + product</td>
+        </tr>
+        <tr>
+            <td>r21: LacY &#8594; <sup>(14.0 × LacY)</sup> &#8594; LacY + lactose</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+		<h5 id="sources">Sources</h5>
+		<p><b>[1]</b> Burrage, K., Tian, T., Burrage, P.: A multi-scaled approach for simulating chemical reaction systems. Progress in Biophysics and Molecular Biology 85(2-3), 217–234 (2004)</p>
+  </div>
+</body>
+</html>

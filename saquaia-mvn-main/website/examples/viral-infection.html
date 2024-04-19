@@ -1,0 +1,38 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SeQuaiA | Viral infection</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Viral infection</h2>
+    <hr>
+    <p>The viral infection model <b>[1]</b> is highly stochastic and extremely stiff. Moreover, all species present high variance and some species even have very high molecular populations. The model can be downloaded <a href="/download.html">here</a>. The reactions can be seen below. The rates are given in 1/day.</p>
+
+<p><img src="/assets/img/examples/viral-reaction.png" class="border w-40 img-responsive" alt="Responsive image" /></p>
+
+<p>A pruned abstraction of the system can be seen below. The state vector is [P, RNA, DNA].</p>
+
+<p><img src="/assets/img/examples/viral-abstraction.png" class="border w-70 img-responsive" alt="Responsive image" /></p>
+
+<p>Please refer to the theory paper for more details.</p>
+
+<h5 id="sources">Sources</h5>
+<p><b>[1]</b> Srivastava, R., You, L., Summers, J., Yin, J.: Stochastic vs. deterministic modeling of intracellular viral kinetics. Journal of Theoretical Biology 218(3), 309–321 (2002)</p>
+
+    <hr>
+  </div>
+</body>
+</html>

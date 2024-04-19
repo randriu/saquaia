@@ -1,0 +1,103 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+  <script src="/assets/js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <title>SeQuaiA | Simple gene expression</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  <script> 
+  	$(function(){
+  	$("#includedNavbar").load("/navbar.html"); 
+  	});
+  </script> 
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <div id="includedNavbar"></div>
+
+  <div class="container section">
+    <h2>Simple gene expression</h2>
+    <hr>
+    <h5 id="introduction">Introduction</h5>
+<p>In the following we consider a simple gene expression model. More precisely, we will consider two variations, a slow gene expression and a faster gene expression and demonstrate that our tool is capable of revealing different behaviors. The models can be downloaded <a href="/download.html">here</a>. The reactions of the slow gene expression can be seen below.</p>
+
+<p><img src="/assets/img/examples/simple-gene-reaction.png" class="border w-40 img-responsive" alt="Responsive image" /></p>
+
+<h5 id="comparison-to-the-classic-may-abstraction">Comparison to the classic may abstraction</h5>
+<p>First, we consider the abstract Markov chain for the gene expression model with population levels {0},[1,20],[21-50],[51-1000] or thresholds 20 and 50 and population bound 1000, respectively.</p>
+
+<p><img src="/assets/img/may.png" class="border w-50 img-responsive" alt="Responsive image" /></p>
+
+<p>The figure above depicts the classic may abstraction of the transition functions, resulting in non-deterministic self-loops (colored in red). It is practically impossible to conclude anything useful, once we reach such a state.
+Instead, SeQuaiA considers sequences of transitions and accelerates them. Basically, the self-loops are combined into a transition that brings a typical representative of this population into a lower or higher interval. In this case, the sequences of prevalently growing transitions (those increasing the population) are considered. The resulting abstraction, with the new transition in red, can be seen below. The “A” prefix denotes an accelerated transition.</p>
+
+<p><img src="/assets/img/abs.png" class="border w-50 img-responsive" alt="Responsive image" /></p>
+
+<p>The rate of the accelerated transition reflects the mass-action kinetics with the typical population in the interval and the typical number of transition repetitions before another interval is reached. As can be seen, the abstraction computed by SeQuaiA is easier to analyze and contains significantly less non-determinism.</p>
+
+<h5 id="slow-gene-expression">Slow gene expression</h5>
+<p>The specification of the slow gene expression in SeQuaiA can be seen below.</p>
+
+<p><img src="/assets/img/simple-slow-model.png" class="border w-40 img-responsive" alt="Responsive image" /></p>
+
+<p>We can observe a balanced competition between blocking and oscillation around 70-100 proteins in the simulation shown above.</p>
+
+<p>First, we want to have a look at the full abstraction, which even shows the least probable behaviors. For that, we set the <i>envelope</i> to a large number M, e.g. M=1000000, to include all the behaviors. The result can be seen below.</p>
+
+<div class="border w-75 h-50" style="overflow:scroll;"><img src="/assets/img/examples/simple-slow-full-abstraction.png" width="100%" /></div>
+<p><br />
+Indeed, the full abstraction also includes the least probable behaviors and features arbitrary oscillations. We prune the system by choosing a smaller envelope, e.g. <i>envelope</i> = 1 or <i>envelope</i> = 3 and obtain the following results:</p>
+
+<p><i>envelope</i> = 1</p>
+<div class="border w-75 h-50" style="overflow:scroll;"><img src="/assets/img/examples/simple-slow-e-1.png" width="100%" /></div>
+<p><br />
+and <i>envelope</i> = 2</p>
+<div class="border w-75 h-50" style="overflow:scroll;"><img src="/assets/img/examples/simple-slow-e-2.png" width="100%" /></div>
+<p><br />
+Now the abstraction reflects the initial growth, subsequent oscillation only in range of higher populations and blocking and gradual extinction of proteins afterwards.</p>
+
+<h5 id="fast-gene-expression">Fast gene expression</h5>
+<p>The specification of the fast gene expression in SeQuaiA can be seen below. Compared to the slow gene expression, the blocking rate is higher. As a consequence, the behavior is less complicated.</p>
+
+<p><img src="/assets/img/simple-fast-model.png" class="border w-40 img-responsive" alt="Responsive image" /></p>
+
+<p>First, we want to have a look at the full abstraction, which even shows the least probable behaviors. For that, we set the <i>envelope</i> to a large number M, e.g. M=1000000, to include all the behaviors. The result can be seen below.</p>
+
+<div class="border w-75 h-50" style="overflow:scroll;"><img src="/assets/img/simple-fast-en-1M.png" width="100%" /></div>
+<p><br />
+Indeed, the visualization also includes less probable behaviors, e.g. [1,0,1] -&gt; [0,1,0]. In order to refine our analysis, we decrease the <i>envelope</i> to obtain the most probable behaviors. We set the <i>envelope</i> to 3 and obtain the following visualization:</p>
+
+<div class="border w-75 h-50" style="overflow:scroll;"><img src="/assets/img/simple-fast-en-3.png" width="100%" /></div>
+<p><br />
+As can be seen, the new analysis only includes the most probable behaviors. The fast growth until the intervals 2 and 3, but not beyond interval 4, and the slow decline afterwards are revealed. The computed rates induce expected times to pass through a state, matching closely the results of a simulation obtained with the DSD tool (see dotted green line in the figure below). We see that the blocking transition (denoted with b in the specification) has a lower probability (smaller rate) than the production transition (denoted with p in the specification) and thus would not appear in a stricter analysis, e.g. <i>envelope</i> = 2.</p>
+
+<p><img src="/assets/img/sim-final5.png" class="border w-25 img-responsive" alt="Responsive image" /></p>
+<p>Simulation obtained using the DSD tool</p>
+
+<h5 id="mean-simulation">Mean simulation</h5>
+<p>We consider the slow gene expression model and want to capture the typical behaviors of the system.</p>
+
+<p>The abstraction of the model is shown below (<i>envelope</i> = 2).</p>
+
+<div class="border w-75 h-50" style="overflow:scroll;"><img src="/assets/img/examples/simple-slow-e-2.png" width="100%" /></div>
+<p><br /></p>
+
+<p>A mean simulation obtained with SeQuaiA is shown below (left). We can observe its validity with respect to the stochastic simulation obtained with the DSD tool (below right, the blue line).</p>
+
+<div class="row">
+<div class="col">
+<img src="/assets/img/examples/mean1.png" class="mr-4 border w-100 img-responsive" alt="Responsive image" />
+</div>
+<div class="col">
+<img src="/assets/img/sim-final5.png" class="border w-100 img-responsive" alt="Responsive image" />
+</div>
+</div>
+
+<h5 id="conclusion">Conclusion</h5>
+<p>In this example we have seen the differences between the classic may abstraction and SeQuaiA’s abstraction. The latter contains significantly less non-determinism and is therefore easier to analyze. We have demonstrated that our tool is able to reveal different behaviors when a model parameter is changed. Further, the <i>mean simulation</i> is a convenient and fast way to capture the typical behaviors of the system.</p>
+
+    <hr>
+  </div>
+</body>
+</html>

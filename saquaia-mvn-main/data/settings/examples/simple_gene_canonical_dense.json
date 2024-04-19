@@ -1,0 +1,149 @@
+{
+  "name": "SimpleGene (canonical, dense)",
+  "initial_state": [
+    1,
+    0,
+    0
+  ],
+  "bounds": [
+    1,
+    1,
+    300
+  ],
+  "population_level_growth_factor": 1.5,
+  "crn": {
+    "name": "SimpleGene",
+    "speciesNames": [
+      "D_on",
+      "D_off",
+      "P"
+    ],
+    "reactions": [
+      {
+        "reactants": [
+          1,
+          0,
+          0
+        ],
+        "products": [
+          1,
+          0,
+          1
+        ],
+        "rate_constant": 10.0,
+        "label": "p"
+      },
+      {
+        "reactants": [
+          0,
+          0,
+          1
+        ],
+        "products": [
+          0,
+          0,
+          0
+        ],
+        "rate_constant": 0.1,
+        "label": "d"
+      },
+      {
+        "reactants": [
+          1,
+          0,
+          1
+        ],
+        "products": [
+          0,
+          1,
+          0
+        ],
+        "rate_constant": 0.001,
+        "label": "s"
+      }
+    ]
+  },
+  "intervals": [
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 1
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 1
+      }
+    ],
+    [
+      {
+        "min": 0,
+        "rep": 0,
+        "max": 0
+      },
+      {
+        "min": 1,
+        "rep": 1,
+        "max": 2
+      },
+      {
+        "min": 3,
+        "rep": 4,
+        "max": 5
+      },
+      {
+        "min": 6,
+        "rep": 8,
+        "max": 10
+      },
+      {
+        "min": 11,
+        "rep": 14,
+        "max": 18
+      },
+      {
+        "min": 19,
+        "rep": 24,
+        "max": 30
+      },
+      {
+        "min": 31,
+        "rep": 39,
+        "max": 48
+      },
+      {
+        "min": 49,
+        "rep": 62,
+        "max": 75
+      },
+      {
+        "min": 76,
+        "rep": 96,
+        "max": 116
+      },
+      {
+        "min": 117,
+        "rep": 147,
+        "max": 178
+      },
+      {
+        "min": 179,
+        "rep": 209,
+        "max": 239
+      },
+      {
+        "min": 240,
+        "rep": 270,
+        "max": 300
+      }
+    ]
+  ]
+}

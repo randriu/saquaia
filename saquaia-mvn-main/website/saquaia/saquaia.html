@@ -1,0 +1,40 @@
+<html> 
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/assets/css/bootstrap.css" crossorigin="anonymous">
+	<script src="/assets/js/bootstrap.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+	<title>SAQuaiA | Description</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+	<script> 
+		$(function(){
+		$("#includedNavbar").load("/saquaia/navbar.html"); 
+		});
+	</script> 
+</head> 
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+	<div id="includedNavbar"></div>
+	
+	<div class="container section">
+	  <h3 class="display-4">SAQuaiA</h3>
+	  <p class="lead">Simulation & Abstraction-based Quantitative Analyzer</p>
+	  <hr class="my-4">
+	  <p>Chemical reaction networks (CRNs) play a fundamental role in the analysis and design of biochemical systems. They give rise to continuous-time stochastic systems, the analysis of which is a computationally intensive task.</p>
+
+		<p>The proposed solution offers a novel method of analyzing stochastic models, featuring:
+	<ul>
+		<li>Hybrid simulation scheme for effective trajectory generation</li>
+		<li>Improved efficiency through memoization</li>
+		<li>Online adaptive learning of abstract states for segment storage</li>
+		<li>Enhanced performance in handling complex stochastic systems</li>
+	</ul>
+	</p>
+	<h4>Basic Concept</h4>
+	<p>Our method integrates two key techniques - memoization and a hybrid simulation scheme - to advance the analysis of stochastic models. The memoization strategy is designed to reuse previously generated pieces of simulation runs, also known as segments, which are based on a population abstraction. This approach expedites the creation of new simulations and preserves the authenticity of the original system dynamics. Simultaneously, the system adapts online to identify and remember the most critical abstract states, ensuring optimal memory use. Alongside, a novel automatic and adaptive hybrid simulation scheme works to accelerate the generation of trajectories, accurately predicting the transient behavior of complex stochastic systems. These two techniques intertwine to present a solution that effectively addresses the challenges of computational analysis of stochastic models, offering a more efficient and comprehensive tool for users.</p>
+	<h4>Developers</h4>
+		<p>SeQuaiA has been developed and is maintained by Martin Helfrich (Technical University of Munich), Milan Češka (Brno University of Technology), Jan Křetínský (Technical University of Munich) and Štefan Martiček (Brno University of Technology).</p>
+	</div>
+</body> 
+</html>
