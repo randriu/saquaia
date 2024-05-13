@@ -547,11 +547,11 @@ def ts_new_intermediate_distributions_test():
         valuation = ts_default_valuation()
 
         distributions,runtime_ssa = ts_new_intermediate_distributions(
-            valuation,method="SSA",sims=50,num_points=num_points,timeout=timeout)        
+            valuation,method="SSA",sims=500,num_points=num_points,timeout=timeout)        
         assert distributions is None or len(distributions) == num_points
         
         distributions,runtime_seg = ts_new_intermediate_distributions(
-            valuation,method="SEG",sims=1000,num_points=num_points,timeout=timeout)
+            valuation,method="SEG",sims=10000,num_points=num_points,timeout=timeout)
         assert distributions is None or len(distributions) == num_points
         
         print(f"SSA runtime = {round(runtime_ssa,1)} s, SEG runtime = {round(runtime_seg,1)} s")
