@@ -3,6 +3,7 @@
 import re
 import json
 import os, shutil
+import time
 import collections
 import random
 
@@ -132,9 +133,9 @@ class BenchmarkFactory:
         self.seed = seed
         self.c = c
 
-        self.timeout = 60*60*24*365
+        self.timeout = 60
 
-    def new(self, suffix, method, valuation):
+    def new(self, suffix, method, valuation, num_points):
         assert method in ["SSA","SEGSSA","SEGHYB"]
         
         simconf = {}
@@ -162,13 +163,18 @@ class BenchmarkFactory:
         task = self.crn.export(valuation)
 
         result = {}
-        result["type"] = "TRANSIENTNEW"
+        if num_points is None:
+            raise Exception("transient analysis in Saquaia is busted, do not use it")
+            result["type"] = "TRANSIENTNEW"
+        else:
+            result["type"] = "VISUAL"
+            result["plot_first"] = 0
         result["name"] = self.prefix + suffix
         result["simconf"] = simconf
         
         result["repeat"]=1
         result["sims"]=self.sims
-        result["timeout"]=self.timeout
+        result["timeout"]=self.timeout*1000
         result["end_t"] = self.end_t
         
         if self.seed is not None:
@@ -182,14 +188,14 @@ class BenchmarkFactory:
         return result
 
 
-def saquaia_parse_output(result_file: str, species: list[str]):
+def saquaia_parse_distribution(result_file: str, species: list[str]):
     '''
     :return a distionary of state-probability pairs
     :return runtime (s)
     '''
+    raise Exception("obsolete method")
     assert os.path.isfile(result_file)
     output = json.load(open(result_file,"rt"))
-
     output = output[0]
     states = output["states"]
     num_samples = len(states)
@@ -211,7 +217,34 @@ def saquaia_parse_output(result_file: str, species: list[str]):
     return state_prob, computation_time
 
 
-def saquaia_run(bf : BenchmarkFactory, suffix: str, method : str, valuation, cleanup=True):
+def saquaia_parse_simulations(sim_folder: str, species: list[str], end_time: float, num_points: int):
+    time_states = [[] for time in range(num_points)]
+    for sim_file in os.listdir(sim_folder):
+        output = json.load(open(f'{sim_folder}/{sim_file}',"rt"))
+        history = output["history"]
+        history = history[1:] # trim initial state
+        
+        for state_time in history:
+            time = state_time["right"]
+            time_index = int(time / (end_time / num_points))-1
+            time_index = min(time_index,num_points-1)
+            state = state_time["left"]
+            time_states[time_index].append(state)
+
+    # convert to distributions
+    distributions = []
+    for time in range(num_points):
+        state_count = collections.defaultdict(int)
+        states = time_states[time]
+        for state in states:
+            state = tuple([int(value) for value in state])
+            state_count[state] += 1
+        state_prob = {state:count/len(states) for state,count in state_count.items()}
+        state_prob = list(state_prob.items())
+        distributions.append(state_prob)
+    return distributions
+
+def saquaia_run(bf: BenchmarkFactory, suffix: str, method: str, valuation, num_points: int, cleanup=True):
     '''
     :param cleanup if True, auxiliary files created to communicate with saquaia will be removed
     :return a dictionary of state-probability pairs
@@ -222,24 +255,40 @@ def saquaia_run(bf : BenchmarkFactory, suffix: str, method : str, valuation, cle
     # write benchmark
     benchmark_file = f"{pwd}/benchmarks_auto.json"
     result_dir = f"{pwd}/saquaia-result"
-    benchmark = bf.new(suffix,method,valuation)
+    benchmark = bf.new(suffix,method,valuation,num_points)
     json.dump([benchmark], open(benchmark_file,"wt") ,indent=2)
 
     # run saquaia
+
+    start_time = time.time()
     command = f'java -jar {pwd}/saquaia-mvn-main/code/target/saquaia-jar-with-dependencies.jar -f {benchmark_file} -o {result_dir}'
     os.system(command)
+    runtime = time.time()-start_time
+
+    # check timeout
+    out_file = f'{result_dir}/{benchmark["name"]}/out.txt'
+    assert os.path.isfile(out_file), f"{out_file} does not exist"
+    with open(out_file, 'r') as file:
+        lines = file.readlines()
+    timeout_reached = False
+    for line in lines:
+        if re.search(r'benchmark timed out', line):
+            timeout_reached = True
+    if timeout_reached:
+        return None,runtime
 
     # collect result
     assert os.path.isfile(benchmark_file), f"{benchmark_file} does not exist"
     result_file = f'{result_dir}/{benchmark["name"]}/result.json'
+    sim_folder = f'{result_dir}/{benchmark["name"]}/0/data'
     species = benchmark["setting"]["crn"]["speciesNames"]
-    saquaia_result = saquaia_parse_output(result_file,species)
+    distributions = saquaia_parse_simulations(sim_folder,species,benchmark["end_t"],num_points)
 
     if cleanup:
         os.remove(benchmark_file)
         shutil.rmtree(result_dir)
 
-    return saquaia_result
+    return distributions,runtime
 
 
 def marginalize(distribution, species_index):
@@ -369,7 +418,9 @@ def load_benchmark_ts_plos():
     initial_state = {x:0 for x in crn.species}
     crn.set_species_initial(initial_state)
     crn.set_species_bound({"MA":16,"MB":16,"SA":512,"SB":512,"PA":500000,"PB":500000})
-    
+    return crn
+
+def ts_default_valuation():
     valuation = {
         "r0" : 1,
         "r1" : 1,
@@ -386,87 +437,124 @@ def load_benchmark_ts_plos():
         "r12" : 10,
         "r13" : 10
     }
+    return valuation
 
-    return crn,valuation
+def ts_param_domain():
+    default_valuation = ts_default_valuation()
+    param_domain = {param : [value/2,value*2] for param,value in default_valuation.items()}
+    return param_domain
+
+def ts_new_valuation():
+    param_domain = ts_param_domain()
+    valuation =  {param:random.uniform(domain[0],domain[1]) for param,domain in param_domain.items()}
+    return valuation
 
 
-def generate_distribution_for_ts(valuation: dict, method: str, sims: int):
+def ts_benchmark_factory(sims: int):
+    crn = load_benchmark_ts_plos()
+    bf = BenchmarkFactory("TS_",crn=crn,end_t=100,sims=sims,seed=None,c=1.1)
+    return bf    
+
+
+# def ts_new_distribution(valuation: dict, method: str, sims: int):
+#     '''
+#     Generate transient distributions for TS benchmark (PLOS version).
+#     :param valuation a dictionary of parameter-value pairs
+#     :param method "SSA" or "SEG"
+#     :param sims number of simulations to execute to obtain one distribution
+#     :return a list of distributions; each distribution d is a vector of probabilities where d[x] denotes the probability
+#         of observing x numbers of protein SA at after 100s
+#     :return Saquaia runtime
+#     '''
+#     raise Exception("obsolete method")
+#     assert method in ["SSA","SEG"]
+#     if method == "SEG":
+#         method = "SEGHYB"
+#     bf = ts_benchmark_factory(sims)
+#     distribution,runtime = saquaia_run(bf=bf, suffix=method, method=method, valuation=valuation, cleanup=True)
+#     marg_index = bf.crn.species.index("SA")
+#     distribution = marginalize(distribution,marg_index)
+#     return distribution,runtime
+
+
+# def ts_distributions_test():
+#     # validation data: use SSA with 100k sims
+    
+#     # training data: use SSA with 500 sims or SEG with 10000 sims, the latter should be faster AND more precise
+#     # use 'runtime' output to measure Saquaia-only runtime
+#     num_valuations = 1
+#     points_training_ssa = []
+#     points_training_seg = []
+#     for _ in range(num_valuations):
+#         # valuation = ts_new_valuation()
+#         valuation = ts_default_valuation()
+
+#         results = {}
+#         distribution,runtime_ssa = ts_new_distribution(valuation,"SSA",sims=1000)
+#         results["ssa-valid"] = distribution
+        
+#         # distribution,runtime = ts_new_distribution(valuation,"SSA",sims=500)
+#         # runtime_ssa = runtime
+#         # points_training_ssa.append( (valuation,distribution) )
+#         # results["ssa-500"] = distribution
+
+#         distribution,runtime = ts_new_distribution(valuation,"SEG",sims=10000)
+#         points_training_seg.append( (valuation,distribution) )
+#         runtime_seg = runtime
+#         results["seg-10k"] = distribution
+
+#         print(f"SSA runtime = {round(runtime_ssa/60,1)} min, SEG runtime = {round(runtime_seg/60,1)} min")
+#         plot_distributions(results)
+
+
+def ts_new_intermediate_distributions(valuation: dict, method: str, sims: int, num_points: int, timeout: int):
     '''
-    Generate transient distributions for TS benchmark (PLOS version).
-    :param valuation a dictionary of parameter-value pairs
-    :param method "SSA" or "SEG"
-    :param sims number of simulations to execute to obtain one distribution
-    :return a list of distributions; each distribution d is a vector of probabilities where d[x] denotes the probability
-        of observing x numbers of protein SA at after 50000s
-    :return Saquaia runtime
+    Run SSA/SEG simulations to generate transient distributions for TS but also generate distributions at intermediate
+    time points.
+    :param num_points number of intermediate time points for which a distribution is required; i.e. distributions will
+        be computed for times [1..num_points] / num_points * end_time
+    :return a list of probability distributions or None if timeout is reached
+    :return runtime
     '''
     assert method in ["SSA","SEG"]
     if method == "SEG":
         method = "SEGHYB"
-    crn,_ = load_benchmark_ts_plos()
-    bf = BenchmarkFactory("TS_",crn=crn,end_t=50000,sims=sims,seed=None,c=1.1)
-    marg_index = crn.species.index("SA")
-    distribution,runtime = saquaia_run(bf=bf, suffix=method, method=method, valuation=valuation, cleanup=True)
-    distribution = marginalize(distribution,marg_index)
-    return distribution,runtime
+    bf = ts_benchmark_factory(sims)
+    bf.timeout = timeout
+    # print("species = ", bf.crn.species)
+    distributions,runtime = saquaia_run(
+        bf=bf, suffix=method, method=method, valuation=valuation, num_points=num_points, cleanup=False
+    )
+    if distributions is None:
+        return distributions,runtime
+    marg_index = bf.crn.species.index("SA")
+    distributions = [marginalize(d,marg_index) for d in distributions]
+    return distributions,runtime
+
+
+def ts_new_intermediate_distributions_test():
+    # how many intermediate time points (including the last one) to keep track of during saquaia call
+    # make sure this value is the same as numPoints in saquaia/code/src/main/java/core/simulation/Simulation.java::recordHistory()
+    num_points = 100
+    # time limit (seconds) per saquaia call
+    timeout = 60*5
+
+    num_valuations = 10
+    for _ in range(num_valuations):
+
+        # valuation is a dictionary of parameter-value pairs
+        # valuation = ts_new_valuation() 
+        valuation = ts_default_valuation()
+
+        distributions,runtime_ssa = ts_new_intermediate_distributions(
+            valuation,method="SSA",sims=50,num_points=num_points,timeout=timeout)        
+        assert distributions is None or len(distributions) == num_points
         
-
-def main():
-
-    # parameter domains
-
-    param_domain = {
-        "r0" : [.1,10],
-        "r1" : [.1,10],
-        "r2" : [.01,1],
-        "r3" : [.01,1],
-        "r4" : [.01,1],
-        "r5" : [1,100],
-        "r6" : [1,100],
-        "r7" : [1,100],
-        "r8" : [1,100],
-        "r9" : [.01,1],
-        "r10" : [.0001,.01],
-        "r11" : [.0001,.01],
-        "r12" : [1,100],
-        "r13" : [1,100]
-    }
-
-    next_valuation = lambda param_domain : {param:random.uniform(domain[0],domain[1]) for param,domain in param_domain.items()}
-
-    # validation data: use SSA with 100k sims
-    # num_points_validation = 0
-    # points_validation = []
-    # for _ in range(num_points_validation):
-    #     valuation = next_valuation(param_domain) 
-    #     distribution,runtime = generate_distribution_for_ts(valuation,"SSA",sims=100000)
-    #     points_validation.append( (valuation,distribution) )
-
-    # training data: use SSA with 500 sims or SEG with 10000 sims, the latter should be faster AND more precise
-    # use 'runtime' output to measure Saquaia-only runtime
-    num_points_training = 10
-    points_training_ssa = []
-    points_training_seg = []
-    for _ in range(num_points_training):
-        valuation = next_valuation(param_domain) 
-
-        results = {}
-        distribution,_ = generate_distribution_for_ts(valuation,"SSA",sims=10000)
-        results["ssa-valid"] = distribution
+        distributions,runtime_seg = ts_new_intermediate_distributions(
+            valuation,method="SEG",sims=1000,num_points=num_points,timeout=timeout)
+        assert distributions is None or len(distributions) == num_points
         
-        distribution,runtime = generate_distribution_for_ts(valuation,"SSA",sims=500)
-        runtime_ssa = runtime
-        points_training_ssa.append( (valuation,distribution) )
-        results["ssa-500"] = distribution
+        print(f"SSA runtime = {round(runtime_ssa,1)} s, SEG runtime = {round(runtime_seg,1)} s")
 
-        distribution,runtime = generate_distribution_for_ts(valuation,"SEG",sims=10000)
-        points_training_seg.append( (valuation,distribution) )
-        runtime_seg = runtime
-        results["seg-10k"] = distribution
 
-        print(f"SSA runtime = {round(runtime_ssa/60,1)} min, SEG runtime = {round(runtime_seg/60,1)} min")
-        plot_distributions(results)
-
-    
-
-main()
+ts_new_intermediate_distributions_test()

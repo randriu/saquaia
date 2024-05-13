@@ -28,9 +28,16 @@ public class Simulation {
     
     // history
     private boolean keepHistory = false;
-    private int maxHistoryLength = 10000;
-//    private int maxHistoryLength = 1000000;
+    private int maxHistoryLength = 10; //+
+    // private int maxHistoryLength = 10000;
+    // private int maxHistoryLength = 1000000;
     private ArrayList<Pair<double[],Double>> history = null;
+
+    //+
+    /*private bool recordHistoryPoints = true;
+    private double endTime = 50000;
+    private int numPoints = 100;
+    private ArrayList<Pair<double[],Double>> historyPoints = null;*/
     
     // listeners
     private transient HashSet<StepListener> stepListeners = null;
@@ -71,6 +78,7 @@ public class Simulation {
     }
     
     public void evolve(double[] new_state, double new_time, double nr_of_reactions){
+
         if (new_time < time) throw new IllegalArgumentException("Simulation: Time can only increase.");
         
         if (nr_of_steps == 0) notifyStepListeners();
@@ -141,7 +149,25 @@ public class Simulation {
     }
     
     public void recordHistory() {
-        if (! keepHistory) return;
+
+        //+
+        double endTime = 100;
+        int numPoints = 100;
+        if (this.history == null || this.history.size() == 0) {
+            this.history = new ArrayList<>();
+            this.history.add(new Pair<>(Vector.copy(this.start_state), 0.0));
+        }
+        int pointsRecorded = this.history.size();
+        Pair<double[],Double> last = this.history.get(pointsRecorded-1);
+        if (last.right == this.time && last.left.equals(this.state)) {
+            return;
+        }
+        // System.out.println("lhs = " + this.time + ", rhs = " + endTime / numPoints * pointsRecorded);
+        if (this.time < endTime / numPoints * pointsRecorded) {
+            return;
+        }
+
+        /*if (! keepHistory) return;
         if (history == null) {
             this.history = new ArrayList<>();
             this.history.add(new Pair<>(Vector.copy(this.start_state), 0.0));
@@ -179,7 +205,9 @@ public class Simulation {
             if (this.historyListeners != null) {
                 for (HistoryListener l : this.historyListeners) l.onHistoryWasTrimmed();
             }
-        }
+        }*/
+
+
         Pair<double[],Double> new_pair = new Pair(Vector.copy(this.state), this.time);
         this.history.add(new_pair);
         
@@ -188,6 +216,7 @@ public class Simulation {
             for (HistoryListener l : this.historyListeners) l.onStepRecorded(new_pair);
         }
     }
+
     
     // -----------------------------
     // LISTENERS
