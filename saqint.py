@@ -251,10 +251,11 @@ def saquaia_run(bf: BenchmarkFactory, suffix: str, method: str, valuation, num_p
     :return runtime (s)
     '''
     pwd = os.getcwd()
+    result_dir = "/tmp/saquaia-result-pid{}".format(os.getpid())
 
     # write benchmark
     benchmark_file = f"{pwd}/benchmarks_auto.json"
-    result_dir = f"{pwd}/saquaia-result"
+    #result_dir = f"{pwd}/saquaia-result"
     benchmark = bf.new(suffix,method,valuation,num_points)
     json.dump([benchmark], open(benchmark_file,"wt") ,indent=2)
 
@@ -557,4 +558,5 @@ def ts_new_intermediate_distributions_test():
         print(f"SSA runtime = {round(runtime_ssa,1)} s, SEG runtime = {round(runtime_seg,1)} s")
 
 
-ts_new_intermediate_distributions_test()
+if __name__ == "__main__":
+    ts_new_intermediate_distributions_test()
