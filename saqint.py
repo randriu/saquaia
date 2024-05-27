@@ -178,7 +178,7 @@ class BenchmarkFactory:
         result["end_t"] = self.end_t
         
         if self.seed is not None:
-            result["seed"]=seed
+            result["seed"]=self.seed
 
         if method in ["SEGSSA","SEGHYB"]:
             assert self.c is not None
@@ -252,6 +252,9 @@ def saquaia_run(bf: BenchmarkFactory, suffix: str, method: str, valuation, num_p
     '''
     pwd = os.getcwd()
 
+    bf.seed = random.randint(0,100000)
+    print("seed = ", bf.seed)
+
     # write benchmark
     benchmark_file = f"{pwd}/benchmarks_auto.json"
     result_dir = f"{pwd}/saquaia-result"
@@ -309,6 +312,8 @@ def plot_distributions(method_distribution):
             ys[x-xmin] = y
         xs = list(range(xmin,xmax+1))
         plt.plot(xs, ys, label=method)
+        print(xs)
+        print(ys)
     plt.legend()
     plt.show()
 
@@ -453,7 +458,7 @@ def ts_new_valuation():
 def ts_benchmark_factory(sims: int):
     crn = load_benchmark_ts_plos()
     bf = BenchmarkFactory("TS_",crn=crn,end_t=100,sims=sims,seed=None,c=1.1)
-    return bf    
+    return bf
 
 
 # def ts_new_distribution(valuation: dict, method: str, sims: int):
@@ -520,10 +525,11 @@ def ts_new_intermediate_distributions(valuation: dict, method: str, sims: int, n
     if method == "SEG":
         method = "SEGHYB"
     bf = ts_benchmark_factory(sims)
+    # bf.end_t = 80
     bf.timeout = timeout
     # print("species = ", bf.crn.species)
     distributions,runtime = saquaia_run(
-        bf=bf, suffix=method, method=method, valuation=valuation, num_points=num_points, cleanup=False
+        bf=bf, suffix=method, method=method, valuation=valuation, num_points=num_points, cleanup=True
     )
     if distributions is None:
         return distributions,runtime
@@ -557,4 +563,40 @@ def ts_new_intermediate_distributions_test():
         print(f"SSA runtime = {round(runtime_ssa,1)} s, SEG runtime = {round(runtime_seg,1)} s")
 
 
-ts_new_intermediate_distributions_test()
+def ts_plot():
+    
+    valuation = [0.7687515, 0.8004745, 0.7257167, 0.8735762, 0.10887009, 10.627182, 66.97331, 9.318985, 77.919266, 0.5399709, 0.0045588976, 0.0018234665, 81.2094, 5.1230316]
+    valuation = { f"r{i}":value for i,value in enumerate(valuation) }
+
+    # valuation = ts_default_valuation()
+
+    param_domain = ts_param_domain()
+    for param,value in valuation.items():
+        domain = param_domain[param]
+        domain_min,domain_max = domain[0],domain[1]
+        print(value, f"[{domain_min},{domain_max}]", value > domain_min and value < domain_max)
+
+    time_index = 80-1
+    
+    distributions = {}
+    
+    def new_distr(method, sims):
+        time_distr,_ = ts_new_intermediate_distributions(valuation,method=method,sims=sims,num_points=100,timeout=600)
+        label = f"{method}-{sims}"
+        distributions[label] = time_distr[time_index]
+
+    new_distr("SSA", 500)
+    new_distr("SEG", 500)
+    new_distr("SEG", 10000)
+
+    out_file = "distr.pkl" 
+    import pickle
+    with open(out_file, 'wb') as fp:
+        pickle.dump(distributions, fp)
+        print(f"distributions saved to {out_file}")
+
+    plot_distributions(distributions)
+
+
+# ts_new_intermediate_distributions_test()
+ts_plot()
