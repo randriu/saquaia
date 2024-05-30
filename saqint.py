@@ -178,7 +178,7 @@ class BenchmarkFactory:
         result["end_t"] = self.end_t
         
         if self.seed is not None:
-            result["seed"]=seed
+            result["seed"]=self.seed
 
         if method in ["SEGSSA","SEGHYB"]:
             assert self.c is not None
@@ -251,11 +251,13 @@ def saquaia_run(bf: BenchmarkFactory, suffix: str, method: str, valuation, num_p
     :return runtime (s)
     '''
     pwd = os.getcwd()
-    result_dir = "/tmp/saquaia-result-pid{}".format(os.getpid())
+
+    result_dir = "/tmp/saquaia-result/pid{}-r{:05x}".format(os.getpid(), random.randint(0, 65536) )
+    os.makedirs(result_dir, exist_ok=True)
 
     # write benchmark
-    benchmark_file = f"{pwd}/benchmarks_auto.json"
-    #result_dir = f"{pwd}/saquaia-result"
+    benchmark_file = f"{result_dir}/benchmarks_auto.json"
+    result_dir = f"{result_dir}/saquaia-result"
     benchmark = bf.new(suffix,method,valuation,num_points)
     json.dump([benchmark], open(benchmark_file,"wt") ,indent=2)
 
