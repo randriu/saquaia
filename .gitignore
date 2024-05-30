@@ -1,1 +1,4 @@
 *.json
+sge_res/test
+sge_res/train
+sge_res/valid

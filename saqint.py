@@ -251,13 +251,16 @@ def saquaia_run(bf: BenchmarkFactory, suffix: str, method: str, valuation, num_p
     :return runtime (s)
     '''
     pwd = os.getcwd()
-
+    
+    # create unique temporary result directory
+    result_dir = "/tmp/saquaia-result/pid{}-r{:05x}".format(os.getpid(), random.randint(0, 65536) )
+    os.makedirs(result_dir, exist_ok=True)
     bf.seed = random.randint(0,100000)
     print("seed = ", bf.seed)
 
     # write benchmark
-    benchmark_file = f"{pwd}/benchmarks_auto.json"
-    result_dir = f"{pwd}/saquaia-result"
+    benchmark_file = f"{result_dir}/benchmarks_auto.json"
+    result_dir = f"{result_dir}/saquaia-result"
     benchmark = bf.new(suffix,method,valuation,num_points)
     json.dump([benchmark], open(benchmark_file,"wt") ,indent=2)
 
@@ -562,7 +565,6 @@ def ts_new_intermediate_distributions_test():
         
         print(f"SSA runtime = {round(runtime_ssa,1)} s, SEG runtime = {round(runtime_seg,1)} s")
 
-
 def ts_plot():
     
     valuation = [0.7687515, 0.8004745, 0.7257167, 0.8735762, 0.10887009, 10.627182, 66.97331, 9.318985, 77.919266, 0.5399709, 0.0045588976, 0.0018234665, 81.2094, 5.1230316]
@@ -598,5 +600,8 @@ def ts_plot():
     plot_distributions(distributions)
 
 
-# ts_new_intermediate_distributions_test()
-ts_plot()
+    
+if __name__ == "__main__":
+    
+  # ts_new_intermediate_distributions_test()
+  ts_plot()
